@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page">
+    <main class="uv-tool-page__content bu-shell">
+      <header class="uv-card uv-tool-page__header bu-hero">
+        <h1 class="uv-tool-page__title" data-i18n="page.title"></h1>
+        <p class="uv-tool-page__subtitle bu-hero__subtitle" data-i18n="page.subtitle"></p>
+      </header>
+
+      <section class="uv-card uv-section bu-card" aria-labelledby="builder-heading">
+        <div class="bu-section-head">
+          <h2 id="builder-heading" class="uv-section__title" data-i18n="builder.section.title"></h2>
+          <p
+            class="uv-section__description"
+            data-i18n="builder.section.description"
+          ></p>
+        </div>
+
+        <div class="bu-form-grid">
+          <label for="privateKey" class="uv-field bu-field bu-field--wide">
+            <span class="uv-field__label" data-i18n="builder.fields.privateKey.label"></span>
+            <textarea
+              id="privateKey"
+              class="uv-input bu-input bu-textarea"
+              rows="2"
+              maxlength="80"
+              spellcheck="false"
+              data-i18n-placeholder="builder.fields.privateKey.placeholder"
+            ></textarea>
+          </label>
+
+          <label for="network" class="uv-field bu-field">
+            <span class="uv-field__label" data-i18n="builder.fields.network.label"></span>
+            <select id="network" class="uv-select bu-input">
+              <option value="mainnet" data-i18n="builder.fields.network.mainnet"></option>
+              <option value="testnet" data-i18n="builder.fields.network.testnet"></option>
+            </select>
+          </label>
+
+          <fieldset class="bu-mode-group">
+            <legend class="uv-field__label" data-i18n="builder.fields.format.legend"></legend>
+            <label for="compressed" class="bu-check">
+              <input id="compressed" type="radio" name="pubmode" value="1" checked />
+              <span data-i18n="builder.fields.format.compressed"></span>
+            </label>
+            <label for="uncompressed" class="bu-check">
+              <input id="uncompressed" type="radio" name="pubmode" value="0" />
+              <span data-i18n="builder.fields.format.uncompressed"></span>
+            </label>
+          </fieldset>
+        </div>
+
+        <div class="uv-cluster">
+          <button
+            id="randomKey"
+            class="uv-button"
+            type="button"
+            data-i18n="builder.actions.random"
+          ></button>
+          <button
+            id="runBuilder"
+            class="uv-button"
+            type="button"
+            data-i18n="builder.actions.run"
+          ></button>
+          <button
+            id="clearBuilder"
+            class="uv-button uv-button--secondary"
+            type="button"
+            data-i18n="common.actions.clear"
+          ></button>
+        </div>
+
+        <p id="builderMessage" class="bu-message" role="status" aria-live="polite"></p>
+
+        <section class="bu-subsection" aria-labelledby="builder-steps-heading">
+          <div class="bu-subsection__head">
+            <h3
+              id="builder-steps-heading"
+              class="bu-subsection__title"
+              data-i18n="builder.groups.steps.title"
+            ></h3>
+            <p
+              class="bu-subsection__description"
+              data-i18n="builder.groups.steps.description"
+            ></p>
+          </div>
+
+          <div class="bu-detail-grid" data-i18n-aria-label="builder.groups.steps.title">
+            <label for="step0" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step0"></span>
+              <input id="step0" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step1" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step1"></span>
+              <input id="step1" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step2" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step2"></span>
+              <input id="step2" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step3" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step3"></span>
+              <input id="step3" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step4" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step4"></span>
+              <input id="step4" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step5" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step5"></span>
+              <input id="step5" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step6" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step6"></span>
+              <input id="step6" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step7" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step7"></span>
+              <input id="step7" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step8" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step8"></span>
+              <input id="step8" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="step9" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.steps.step9"></span>
+              <input id="step9" class="uv-input bu-input bu-mono" readonly />
+            </label>
+          </div>
+        </section>
+
+        <section class="bu-subsection" aria-labelledby="builder-outputs-heading">
+          <div class="bu-subsection__head">
+            <h3
+              id="builder-outputs-heading"
+              class="bu-subsection__title"
+              data-i18n="builder.groups.outputs.title"
+            ></h3>
+            <p
+              class="bu-subsection__description"
+              data-i18n="builder.groups.outputs.description"
+            ></p>
+          </div>
+
+          <div class="bu-detail-grid" data-i18n-aria-label="builder.groups.outputs.title">
+            <label for="wifOutput" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.outputs.wif"></span>
+              <input id="wifOutput" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="nestedOutput" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.outputs.nested"></span>
+              <input id="nestedOutput" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="segwitOutput" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.outputs.segwit"></span>
+              <input id="segwitOutput" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="legacyScriptOutput" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.outputs.legacyScript"></span>
+              <input id="legacyScriptOutput" class="uv-input bu-input bu-mono" readonly />
+            </label>
+            <label for="segwitScriptOutput" class="uv-field bu-detail-row">
+              <span class="uv-field__label" data-i18n="builder.outputs.segwitScript"></span>
+              <input id="segwitScriptOutput" class="uv-input bu-input bu-mono" readonly />
+            </label>
+          </div>
+        </section>
+      </section>
+
+      <section class="uv-card uv-section bu-card" aria-labelledby="notes-heading">
+        <h2 id="notes-heading" class="uv-section__title" data-i18n="notes.title"></h2>
+        <ul class="bu-notes">
+          <li data-i18n="notes.items.local"></li>
+          <li data-i18n="notes.items.secrets"></li>
+          <li data-i18n="notes.items.educational"></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

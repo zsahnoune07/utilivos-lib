@@ -1,0 +1,116 @@
+{
+  "page": {
+    "meta": {
+      "title": "BTC Generator"
+    },
+    "title": "BTC Generator",
+    "subtitle": "Generate Bitcoin addresses from raw private keys locally with full derivation, encoding, and script diagnostics."
+  },
+  "common": {
+    "actions": {
+      "clear": "Clear"
+    },
+    "empty": "-"
+  },
+  "builder": {
+    "section": {
+      "title": "Address Builder",
+      "description": "Reproduce the full legacy address derivation path from a 32-byte private key and inspect related outputs."
+    },
+    "fields": {
+      "privateKey": {
+        "label": "Private key (64 hex chars)",
+        "placeholder": "e.g. 1E99423A4ED27608A15A2616CF43F40F3DFFB36E17A15C6760C0CB6F8C2B5B77"
+      },
+      "network": {
+        "label": "Network",
+        "mainnet": "Mainnet",
+        "testnet": "Testnet"
+      },
+      "format": {
+        "legend": "Public key format",
+        "compressed": "Compressed",
+        "uncompressed": "Uncompressed"
+      }
+    },
+    "actions": {
+      "random": "Random key",
+      "run": "Run all steps"
+    },
+    "groups": {
+      "steps": {
+        "title": "Derivation steps",
+        "description": "Each output mirrors the legacy P2PKH derivation path from the submitted private key."
+      },
+      "outputs": {
+        "title": "Derived outputs",
+        "description": "Additional encodings and script templates generated from the same key material."
+      }
+    },
+    "steps": {
+      "step0": "0 - Private ECDSA key",
+      "step1": "1 - Public ECDSA key",
+      "step2": "2 - SHA-256(step 1)",
+      "step3": "3 - RIPEMD-160(step 2)",
+      "step4": "4 - Network byte + step 3",
+      "step5": "5 - SHA-256(step 4)",
+      "step6": "6 - SHA-256(step 5)",
+      "step7": "7 - First 4 bytes of step 6",
+      "step8": "8 - Step 4 + checksum",
+      "step9": "9 - Base58Check address"
+    },
+    "outputs": {
+      "wif": "WIF private key",
+      "nested": "P2SH-P2WPKH address",
+      "segwit": "Native SegWit (bech32) address",
+      "legacyScript": "Legacy scriptPubKey",
+      "segwitScript": "SegWit scriptPubKey"
+    },
+    "messages": {
+      "computing": "Computing address data...",
+      "success": "Address data generated successfully."
+    }
+  },
+  "notes": {
+    "title": "Notes",
+    "items": {
+      "local": "All calculations run locally in your browser.",
+      "secrets": "Never use online tools with production wallet secrets.",
+      "educational": "This tool is educational and diagnostic. It derives address data only and does not sign transactions."
+    }
+  },
+  "errors": {
+    "unknown": "An unexpected error occurred.",
+    "cryptoUnavailable": "Web Crypto API is unavailable in this environment.",
+    "randomUnavailable": "Secure random generation is unavailable.",
+    "privateKeyLength": "Private key must be exactly 64 hex characters.",
+    "privateKeyRange": "Private key is out of range for secp256k1.",
+    "witnessData": "Unable to build witness data.",
+    "base58PayloadShort": "Base58 payload is too short.",
+    "wifLength": "WIF payload length is invalid.",
+    "wifCompressionMarker": "Invalid WIF compression marker.",
+    "segwitMissingVersion": "SegWit payload is missing witness version.",
+    "witnessVersionRange": "Witness version must be between 0 and 16.",
+    "segwitPadding": "SegWit data has invalid padding.",
+    "witnessProgramLength": "Witness program length must be between 2 and 40 bytes.",
+    "witnessV0Encoding": "Witness v0 addresses must use Bech32.",
+    "witnessV0ProgramLength": "Witness v0 program must be 20 or 32 bytes.",
+    "witnessV1Encoding": "Witness v1-v16 addresses must use Bech32m.",
+    "scalarRange": "Private key must be in range 1..n-1.",
+    "publicKeyDerivation": "Failed to derive public key.",
+    "base58CheckShort": "Base58Check data is too short.",
+    "base58Checksum": "Base58 checksum mismatch (got {{got}}, expected {{expected}}).",
+    "base58Empty": "Base58 input is empty.",
+    "base58Character": "Invalid Base58 character: {{char}}",
+    "bech32Length": "Bech32 length must be between 8 and 90 characters.",
+    "bech32Characters": "Bech32 contains invalid characters.",
+    "bech32Case": "Bech32 cannot mix upper and lower case.",
+    "bech32Separator": "Bech32 separator position is invalid.",
+    "bech32Character": "Invalid Bech32 character: {{char}}",
+    "bech32Checksum": "Bech32 checksum is invalid.",
+    "hexEvenLength": "Hex string must have an even length.",
+    "hexInvalid": "Invalid hex string.",
+    "integerSize": "Integer does not fit in the target byte length.",
+    "modInverse": "Modular inverse does not exist."
+  }
+}
