@@ -1,0 +1,138 @@
+/* Scoped layout; use host utilivo tokens only (no new --uv-* definitions). */
+
+.wi-page .wi-shell {
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+.wi-tabs.uv-tabs {
+  width: 100%;
+}
+
+.wi-input-shell {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.wi-input-shell[data-invalid="true"] .wi-input {
+  border-color: var(--uv-border-error, var(--uv-color-error, #c62828));
+}
+
+.wi-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.wi-input-unit {
+  align-self: center;
+  font-size: 0.875rem;
+  color: var(--uv-text-muted);
+  white-space: nowrap;
+}
+
+.wi-error {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--uv-text-error, var(--uv-color-error, #c62828));
+}
+
+.wi-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  color: var(--uv-text-muted);
+}
+
+.wi-actions {
+  margin-top: 1rem;
+}
+
+.wi-section-head {
+  margin-bottom: 0.75rem;
+}
+
+.wi-result__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wi-result__label {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--uv-text-muted);
+}
+
+.wi-result__value {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.wi-result__secondary {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--uv-text-muted);
+}
+
+.wi-result__category {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.wi-result__message {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--uv-text-muted);
+}
+
+.wi-result--empty .wi-result__value {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.wi-breakdown {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--uv-border-subtle, rgba(128, 128, 128, 0.25));
+}
+
+.wi-breakdown__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.wi-breakdown__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--uv-text-muted);
+  line-height: 1.45;
+}
+
+.wi-disclaimer {
+  margin-top: 1rem;
+}
+
+.wi-disclaimer p {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+}
+
+.wi-method {
+  margin-top: 1rem;
+}
+
+.wi-method-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--uv-text-muted);
+  line-height: 1.5;
+}

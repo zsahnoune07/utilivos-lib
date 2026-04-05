@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page wi-page">
+    <main class="uv-tool-page__content wi-shell">
+      <div class="uv-grid">
+        <section
+          class="uv-card uv-section wi-form-card uv-col-8"
+          aria-labelledby="calculator-heading"
+        >
+          <h2 id="calculator-heading" class="uv-section__title" data-i18n="form.section.title"></h2>
+          <p class="uv-section__description" data-i18n="form.section.description"></p>
+
+          <form id="calculatorForm" class="wi-form" novalidate>
+            <div class="uv-field">
+              <span class="uv-field__label" data-i18n="form.units.label"></span>
+              <div class="wi-tabs uv-tabs" role="tablist" data-i18n-aria-label="form.units.aria">
+                <button
+                  id="unitMetric"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="metricFields"
+                  data-unit="metric"
+                  data-i18n="form.units.metric"
+                ></button>
+                <button
+                  id="unitImperial"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="imperialFields"
+                  data-unit="imperial"
+                  data-i18n="form.units.imperial"
+                ></button>
+              </div>
+            </div>
+
+            <section
+              id="metricFields"
+              class="wi-unit-panel"
+              role="tabpanel"
+              aria-labelledby="unitMetric"
+            >
+              <label for="weightKg" class="uv-field">
+                <span class="uv-field__label" data-i18n="form.fields.weightKg.label"></span>
+                <div id="weightKgShell" class="wi-input-shell">
+                  <input
+                    id="weightKg"
+                    class="uv-input wi-input"
+                    type="number"
+                    inputmode="decimal"
+                    step="0.1"
+                    min="20"
+                    max="300"
+                    autocomplete="off"
+                    data-i18n-placeholder="form.fields.weightKg.placeholder"
+                    aria-describedby="weightKgHelp weightKgError"
+                  />
+                  <span class="wi-input-unit" data-i18n="form.fields.weightKg.unit"></span>
+                </div>
+                <span id="weightKgHelp" class="uv-field__help" data-i18n="form.fields.weightKg.help"></span>
+                <span id="weightKgError" class="wi-error" aria-live="polite"></span>
+              </label>
+            </section>
+
+            <section
+              id="imperialFields"
+              class="wi-unit-panel"
+              role="tabpanel"
+              aria-labelledby="unitImperial"
+              hidden
+            >
+              <label for="weightLb" class="uv-field">
+                <span class="uv-field__label" data-i18n="form.fields.weightLb.label"></span>
+                <div id="weightLbShell" class="wi-input-shell">
+                  <input
+                    id="weightLb"
+                    class="uv-input wi-input"
+                    type="number"
+                    inputmode="decimal"
+                    step="0.1"
+                    min="44"
+                    max="662"
+                    autocomplete="off"
+                    data-i18n-placeholder="form.fields.weightLb.placeholder"
+                    aria-describedby="weightLbHelp weightLbError"
+                  />
+                  <span class="wi-input-unit" data-i18n="form.fields.weightLb.unit"></span>
+                </div>
+                <span id="weightLbHelp" class="uv-field__help" data-i18n="form.fields.weightLb.help"></span>
+                <span id="weightLbError" class="wi-error" aria-live="polite"></span>
+              </label>
+            </section>
+
+            <label class="uv-field" for="sex">
+              <span class="uv-field__label" data-i18n="form.fields.sex.label"></span>
+              <select id="sex" class="uv-select" aria-describedby="sexHelp">
+                <option value="unspecified" data-i18n="form.fields.sex.unspecified"></option>
+                <option value="female" data-i18n="form.fields.sex.female"></option>
+                <option value="male" data-i18n="form.fields.sex.male"></option>
+              </select>
+              <span id="sexHelp" class="uv-field__help" data-i18n="form.fields.sex.help"></span>
+            </label>
+
+            <label class="uv-field" for="activity">
+              <span class="uv-field__label" data-i18n="form.fields.activity.label"></span>
+              <select id="activity" class="uv-select" aria-describedby="activityHelp">
+                <option value="sedentary" data-i18n="form.fields.activity.sedentary"></option>
+                <option value="light" data-i18n="form.fields.activity.light"></option>
+                <option value="moderate" data-i18n="form.fields.activity.moderate"></option>
+                <option value="active" data-i18n="form.fields.activity.active"></option>
+                <option value="very_active" data-i18n="form.fields.activity.very_active"></option>
+              </select>
+              <span id="activityHelp" class="uv-field__help" data-i18n="form.fields.activity.help"></span>
+            </label>
+
+            <label class="uv-field" for="climate">
+              <span class="uv-field__label" data-i18n="form.fields.climate.label"></span>
+              <select id="climate" class="uv-select">
+                <option value="temperate" data-i18n="form.fields.climate.temperate"></option>
+                <option value="hot" data-i18n="form.fields.climate.hot"></option>
+              </select>
+            </label>
+
+            <label class="uv-field" for="pregnancy">
+              <span class="uv-field__label" data-i18n="form.fields.pregnancy.label"></span>
+              <select id="pregnancy" class="uv-select" aria-describedby="pregnancyHelp">
+                <option value="none" data-i18n="form.fields.pregnancy.none"></option>
+                <option value="pregnant" data-i18n="form.fields.pregnancy.pregnant"></option>
+                <option value="breastfeeding" data-i18n="form.fields.pregnancy.breastfeeding"></option>
+              </select>
+              <span id="pregnancyHelp" class="uv-field__help" data-i18n="form.fields.pregnancy.help"></span>
+            </label>
+
+            <p id="formStatus" class="wi-status" role="status" aria-live="polite"></p>
+
+            <div class="uv-cluster wi-actions">
+              <button
+                id="calculateButton"
+                class="uv-button"
+                type="submit"
+                disabled
+                data-i18n="form.actions.calculate"
+              ></button>
+              <button
+                id="resetButton"
+                class="uv-button uv-button--secondary"
+                type="button"
+                data-i18n="form.actions.reset"
+              ></button>
+            </div>
+          </form>
+        </section>
+
+        <section
+          id="resultCard"
+          class="uv-card uv-section wi-result wi-result--empty uv-col-4"
+          aria-labelledby="result-heading"
+          tabindex="-1"
+        >
+          <div class="wi-section-head">
+            <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+            <p class="uv-section__description" data-i18n="result.section.description"></p>
+          </div>
+
+          <div class="wi-result__body" role="status" aria-live="polite" aria-atomic="true">
+            <span id="resultBadge" class="uv-badge uv-badge--info"></span>
+            <p class="wi-result__label" data-i18n="result.summary.perDay"></p>
+            <p id="resultTotalMl" class="wi-result__value"></p>
+            <p id="resultLiters" class="wi-result__secondary"></p>
+            <p id="resultCups" class="wi-result__secondary"></p>
+            <p id="resultGlasses" class="wi-result__secondary"></p>
+            <p id="resultCategory" class="wi-result__category"></p>
+            <p id="resultMessage" class="wi-result__message"></p>
+
+            <div id="breakdownBlock" class="wi-breakdown" hidden>
+              <h3 class="wi-breakdown__title" data-i18n="result.breakdown.title"></h3>
+              <ul id="breakdownList" class="wi-breakdown__list"></ul>
+            </div>
+          </div>
+
+          <div class="uv-alert uv-alert--info wi-disclaimer">
+            <strong data-i18n="result.disclaimer.title"></strong>
+            <p data-i18n="result.disclaimer.body"></p>
+          </div>
+        </section>
+      </div>
+
+      <section class="uv-card uv-section wi-method" aria-labelledby="method-heading">
+        <h2 id="method-heading" class="uv-section__title" data-i18n="method.title"></h2>
+        <p class="uv-section__description" data-i18n="method.description"></p>
+        <ul class="wi-method-list">
+          <li data-i18n="method.points.weight"></li>
+          <li data-i18n="method.points.addons"></li>
+          <li data-i18n="method.points.round"></li>
+        </ul>
+      </section>
+    </main>
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+{
+  "page": {
+    "meta": {
+      "title": "Water Intake Calculator"
+    }
+  },
+  "form": {
+    "section": {
+      "title": "Daily fluid estimate",
+      "description": "Rough guideline for drinking water and other fluids—not a prescription. Needs vary with health conditions, medications, training load, and climate."
+    },
+    "units": {
+      "label": "Units",
+      "aria": "Unit system",
+      "metric": "Metric",
+      "imperial": "Imperial"
+    },
+    "fields": {
+      "weightKg": {
+        "label": "Weight",
+        "placeholder": "70",
+        "unit": "kg",
+        "help": "Between 20 and 300 kg.",
+        "errors": {
+          "required": "Enter your weight in kilograms.",
+          "number": "Use a number for weight.",
+          "range": "Weight should be between 20 and 300 kg."
+        }
+      },
+      "weightLb": {
+        "label": "Weight",
+        "placeholder": "154",
+        "unit": "lb",
+        "help": "Between about 44 and 661 lb.",
+        "errors": {
+          "required": "Enter your weight in pounds.",
+          "number": "Use a number for weight.",
+          "range": "Weight is outside the supported range."
+        }
+      },
+      "sex": {
+        "label": "Sex (for baseline)",
+        "help": "Adjusts ml per kg slightly using common population heuristics. Choose unspecified if you prefer a middle value.",
+        "unspecified": "Unspecified (33 ml/kg)",
+        "female": "Female (31 ml/kg)",
+        "male": "Male (35 ml/kg)"
+      },
+      "activity": {
+        "label": "Activity level",
+        "help": "Extra fluid added on top of the weight-based estimate.",
+        "sedentary": "Mostly sedentary",
+        "light": "Light activity",
+        "moderate": "Moderate activity",
+        "active": "Active",
+        "very_active": "Very active / intense training"
+      },
+      "climate": {
+        "label": "Climate",
+        "temperate": "Temperate / mild",
+        "hot": "Hot or very humid"
+      },
+      "pregnancy": {
+        "label": "Pregnancy or breastfeeding",
+        "help": "If applicable. Adds a fixed daily amount; follow your clinician for medical guidance.",
+        "none": "Not applicable",
+        "pregnant": "Pregnant",
+        "breastfeeding": "Breastfeeding"
+      }
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "reset": "Reset"
+    },
+    "status": {
+      "empty": "Enter a valid weight to see an estimate.",
+      "incomplete": "Check your weight is within range.",
+      "ready": "Ready to calculate."
+    }
+  },
+  "result": {
+    "section": {
+      "title": "Your estimate",
+      "description": "Round numbers for planning; drink when thirsty and adjust with activity and heat."
+    },
+    "badges": {
+      "waiting": "Waiting for input",
+      "ready": "Estimate"
+    },
+    "empty": {
+      "category": "No estimate yet",
+      "body": "Fill in weight and tap Calculate, or adjust inputs to update live."
+    },
+    "summary": {
+      "perDay": "Total fluids (approx.)"
+    },
+    "metrics": {
+      "ml": {
+        "label": "Milliliters per day",
+        "value": "{{value}} ml"
+      },
+      "liters": {
+        "label": "Liters per day",
+        "value": "{{value}} L"
+      },
+      "cups": {
+        "label": "8 fl oz cups (≈237 ml)",
+        "value": "About {{value}} cups"
+      },
+      "glasses": {
+        "label": "250 ml glasses",
+        "value": "About {{value}} glasses"
+      }
+    },
+    "breakdown": {
+      "title": "How we got this",
+      "base": "From weight (~{{mlPerKg}} ml/kg): {{value}} ml",
+      "activity": "Activity add-on: +{{value}} ml",
+      "climate": "Climate add-on: +{{value}} ml",
+      "pregnancy": "Pregnancy or lactation add-on: +{{value}} ml"
+    },
+    "disclaimer": {
+      "title": "Important",
+      "body": "This tool is for general education only. It is not medical advice. People with heart, kidney, or liver disease, electrolyte disorders, or on fluid-restricted plans should follow a clinician’s guidance."
+    }
+  },
+  "method": {
+    "title": "Method",
+    "description": "Simple transparent model you can sanity-check:",
+    "points": {
+      "weight": "Base volume is body weight times a ml-per-kg factor (31–35 depending on sex bucket, or 33 if unspecified).",
+      "addons": "Fixed daily amounts are added for activity tier, hot climate, and pregnancy or breastfeeding when selected.",
+      "round": "The total is rounded to the nearest milliliter for display."
+    }
+  },
+  "common": {
+    "emptyValue": "—"
+  }
+}
