@@ -1,0 +1,90 @@
+{
+  "page": {
+    "meta": {
+      "title": "1RM calculator"
+    }
+  },
+  "form": {
+    "section": {
+      "title": "Estimate your one-rep max",
+      "description": "Enter the weight you lifted and how many reps you completed at that weight. The tool converts between kg and lb and shows several common estimation formulas. Results are approximate."
+    },
+    "units": {
+      "label": "Units",
+      "aria": "Weight units",
+      "kg": "Kilograms",
+      "lb": "Pounds",
+      "kg_abbr": "kg",
+      "lb_abbr": "lb"
+    },
+    "fields": {
+      "weight": {
+        "label": "Weight lifted",
+        "placeholder": "e.g. 100",
+        "help": "Positive number; max 2000 in the unit you selected.",
+        "errors": {
+          "required": "Enter the weight you lifted.",
+          "number": "Use a positive number.",
+          "range": "Weight must be at most 2000 in the selected unit."
+        }
+      },
+      "reps": {
+        "label": "Reps completed",
+        "placeholder": "e.g. 5",
+        "help": "Whole number from 1 to 15 (submax set).",
+        "errors": {
+          "required": "Enter how many reps you completed.",
+          "number": "Use a whole number.",
+          "integer": "Reps must be a whole number.",
+          "range": "Use between 1 and 15 reps."
+        }
+      }
+    },
+    "actions": {
+      "reset": "Clear"
+    },
+    "status": {
+      "invalid": "Fix the highlighted fields to see estimates.",
+      "valid": "Estimates update as you type."
+    }
+  },
+  "result": {
+    "section": {
+      "title": "Estimated 1RM",
+      "description": "Three common formulas; values are shown in your selected units."
+    },
+    "live_badge": "Live",
+    "summary": "Based on {{weight}} {{unit}} × {{reps}} reps",
+    "empty": "Enter valid weight and reps to see estimates.",
+    "disclaimer": {
+      "title": "Training note",
+      "body": "These formulas predict a one-rep max from a submax set. They are not medical advice and do not replace qualified coaching or your own judgment when loading the bar."
+    },
+    "formulas": {
+      "unit_lead": "\u00a0{{unit}}",
+      "brzycki": {
+        "name": "Brzycki",
+        "note": "W × 36 ÷ (37 − reps), or weight when reps = 1."
+      },
+      "epley": {
+        "name": "Epley",
+        "note": "W × (1 + reps ÷ 30)."
+      },
+      "lombardi": {
+        "name": "Lombardi",
+        "note": "W × reps^0.10."
+      }
+    }
+  },
+  "about": {
+    "section": {
+      "title": "About the formulas",
+      "description": "Different studies produced different curves; showing several estimates gives a reasonable range."
+    },
+    "points": {
+      "brzycki": "Brzycki (1993) is widely used in strength calculators; it can diverge at very high rep counts, so this tool caps reps at 15.",
+      "epley": "Epley (1985) is simple and often used for quick estimates from moderate rep sets.",
+      "lombardi": "Lombardi’s exponential relation is another common population-level estimate."
+    }
+  }
+}

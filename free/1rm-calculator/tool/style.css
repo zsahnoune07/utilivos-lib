@@ -1,0 +1,155 @@
+/* Plugin layout only; design tokens come from the host via tool/utilivo/*.css */
+
+.rm-shell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-4, 1rem);
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.rm-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-2, 0.5rem);
+  margin-bottom: var(--uv-space-3, 0.75rem);
+}
+
+.rm-input-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-4, 1rem);
+}
+
+.rm-input-shell {
+  display: flex;
+  align-items: stretch;
+  gap: var(--uv-space-2, 0.5rem);
+}
+
+.rm-input-shell .rm-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.rm-input-unit {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--uv-space-2, 0.5rem);
+  font-size: var(--uv-text-body-sm-size, 0.875rem);
+  color: var(--uv-color-text-muted, inherit);
+  white-space: nowrap;
+}
+
+.rm-error {
+  display: block;
+  margin-top: var(--uv-space-1, 0.25rem);
+  font-size: var(--uv-text-body-sm-size, 0.875rem);
+  color: var(--uv-color-danger, inherit);
+  min-height: 1.25em;
+}
+
+.rm-error:empty {
+  min-height: 0;
+}
+
+.rm-status {
+  margin-top: var(--uv-space-2, 0.5rem);
+  font-size: var(--uv-text-body-sm-size, 0.875rem);
+  color: var(--uv-color-text-muted, inherit);
+  min-height: 1.25em;
+}
+
+.rm-status:empty {
+  display: none;
+}
+
+.rm-actions {
+  margin-top: var(--uv-space-3, 0.75rem);
+}
+
+.rm-result__pattern {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-3, 0.75rem);
+}
+
+.rm-result:not(.rm-result--empty) {
+  border-color: color-mix(in srgb, var(--uv-color-success, var(--uv-border-subtle)) 38%, var(--uv-border-subtle));
+}
+
+.rm-result--empty .rm-results-grid {
+  display: none;
+}
+
+.rm-result:not(.rm-result--empty) .rm-result__empty {
+  display: none;
+}
+
+.rm-result-summary {
+  margin: 0;
+  padding: var(--uv-space-2, 0.5rem) var(--uv-space-3, 0.75rem);
+  border-radius: var(--uv-radius-md, 0.5rem);
+  border: 1px dashed var(--uv-border-subtle, currentColor);
+  background: var(--uv-surface-base, transparent);
+  font-weight: var(--uv-font-weight-label-lg, 600);
+}
+
+.rm-result__live-badge {
+  flex-shrink: 0;
+}
+
+.rm-results-grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--uv-space-3, 0.75rem);
+}
+
+.rm-stat .uv-badge {
+  align-self: flex-start;
+}
+
+.rm-stat__measure {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--uv-space-1, 0.25rem);
+  margin-top: var(--uv-space-2, 0.5rem);
+}
+
+.rm-stat__number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--uv-text-primary, inherit);
+}
+
+.rm-stat__unit {
+  font-weight: var(--uv-font-weight-label-md, 500);
+}
+
+.rm-stat__note {
+  margin: var(--uv-space-2, 0.5rem) 0 0;
+}
+
+.rm-result__empty {
+  margin: 0;
+  padding: var(--uv-space-4, 1rem);
+}
+
+.rm-result__empty-copy {
+  margin: 0;
+}
+
+.rm-alert-copy {
+  margin: var(--uv-space-2, 0.5rem) 0 0;
+}
+
+.rm-note-list {
+  margin: var(--uv-space-3, 0.75rem) 0 0;
+  padding-inline-start: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-2, 0.5rem);
+}

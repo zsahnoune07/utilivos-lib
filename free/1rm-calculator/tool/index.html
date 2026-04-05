@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./utilivo/patterns.css" />
+    <link rel="stylesheet" href="./utilivo/utilities.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page rm-page">
+    <main class="uv-tool-page__content rm-shell">
+      <section class="uv-card uv-section rm-card" aria-labelledby="inputs-heading">
+        <div class="rm-section-head">
+          <h2 id="inputs-heading" class="uv-section__title" data-i18n="form.section.title"></h2>
+          <p class="uv-section__description" data-i18n="form.section.description"></p>
+        </div>
+
+        <div class="uv-field">
+          <span class="uv-field__label" data-i18n="form.units.label"></span>
+          <div class="uv-tabs rm-tabs" role="tablist" data-i18n-aria-label="form.units.aria">
+            <button
+              id="unitKg"
+              class="uv-tab"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="rmInputs"
+              data-unit="kg"
+              data-i18n="form.units.kg"
+            ></button>
+            <button
+              id="unitLb"
+              class="uv-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="rmInputs"
+              data-unit="lb"
+              data-i18n="form.units.lb"
+            ></button>
+          </div>
+        </div>
+
+        <div id="rmInputs" class="rm-input-grid" role="tabpanel" aria-labelledby="unitKg">
+          <label for="weight" class="uv-field">
+            <span class="uv-field__label" data-i18n="form.fields.weight.label"></span>
+            <div id="weightShell" class="rm-input-shell">
+              <input
+                id="weight"
+                class="uv-input rm-input rm-input--decimal"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                data-i18n-placeholder="form.fields.weight.placeholder"
+                aria-describedby="weightHelp weightError"
+              />
+              <span id="weightUnitSuffix" class="rm-input-unit" data-i18n="form.units.kg_abbr"></span>
+            </div>
+            <span id="weightHelp" class="uv-field__help" data-i18n="form.fields.weight.help"></span>
+            <span id="weightError" class="rm-error" aria-live="polite"></span>
+          </label>
+
+          <label for="reps" class="uv-field">
+            <span class="uv-field__label" data-i18n="form.fields.reps.label"></span>
+            <div id="repsShell" class="rm-input-shell">
+              <input
+                id="reps"
+                class="uv-input rm-input rm-digits-only"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                maxlength="2"
+                data-i18n-placeholder="form.fields.reps.placeholder"
+                aria-describedby="repsHelp repsError"
+              />
+            </div>
+            <span id="repsHelp" class="uv-field__help" data-i18n="form.fields.reps.help"></span>
+            <span id="repsError" class="rm-error" aria-live="polite"></span>
+          </label>
+        </div>
+
+        <p id="formStatus" class="rm-status" role="status" aria-live="polite"></p>
+
+        <div class="uv-cluster rm-actions">
+          <button
+            id="resetButton"
+            class="uv-button uv-button--secondary"
+            type="button"
+            data-i18n="form.actions.reset"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        id="resultCard"
+        class="uv-card uv-section rm-card rm-result rm-result--empty"
+        aria-labelledby="result-heading"
+        tabindex="-1"
+      >
+        <div class="uv-pattern-results rm-result__pattern">
+          <div class="rm-section-head uv-pattern-results__headline">
+            <div>
+              <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+              <p class="uv-section__description" data-i18n="result.section.description"></p>
+            </div>
+            <span id="resultLiveBadge" class="uv-badge uv-badge--success rm-result__live-badge" hidden data-i18n="result.live_badge"></span>
+          </div>
+
+          <p id="resultSummary" class="rm-result-summary uv-text-body-md uv-text-muted" hidden></p>
+
+          <div class="rm-result__body" role="status" aria-live="polite" aria-atomic="true">
+            <div id="formulaList" class="rm-results-grid" hidden></div>
+            <div id="resultEmpty" class="rm-result__empty uv-empty-state uv-empty">
+              <p class="uv-section__description rm-result__empty-copy" data-i18n="result.empty"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="uv-alert uv-alert--info">
+          <strong data-i18n="result.disclaimer.title"></strong>
+          <p class="rm-alert-copy" data-i18n="result.disclaimer.body"></p>
+        </div>
+      </section>
+
+      <section class="uv-card uv-section rm-card" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="uv-section__title" data-i18n="about.section.title"></h2>
+        <p class="uv-section__description" data-i18n="about.section.description"></p>
+        <ul class="rm-note-list">
+          <li data-i18n="about.points.brzycki"></li>
+          <li data-i18n="about.points.epley"></li>
+          <li data-i18n="about.points.lombardi"></li>
+        </ul>
+      </section>
+    </main>
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

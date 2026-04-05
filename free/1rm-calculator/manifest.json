@@ -1,0 +1,41 @@
+{
+  "id": "com.utilivo.plugin.1rm-calculator",
+  "name": "1RM calculator",
+  "slug": "1rm-calculator",
+  "version": "1.0.1",
+  "description": "Estimate one-rep max from a submax set using Brzycki, Epley, and Lombardi formulas, with kg/lb units and session restore.",
+  "author": "Utilivo",
+  "entry": "tool/index.html",
+  "icon": "tool/assets/icon.png",
+  "thumb": "tool/assets/thumb.png",
+  "category": "lifestyle",
+  "tags": [
+    "1rm",
+    "one-rep-max",
+    "strength",
+    "lifting",
+    "weightlifting",
+    "powerlifting",
+    "calculator",
+    "training"
+  ],
+  "tier": "free",
+  "permissions": [
+    "storage"
+  ],
+  "ui_type": "page",
+  "api_version": "1",
+  "screenshots": [
+    "tool/assets/screenshots/home.png"
+  ],
+  "min_app_version": "1.0.0",
+  "locales": [
+    "en"
+  ],
+  "default_locale": "en",
+  "manifest_schema_version": 1,
+  "design_system_version": 1,
+  "runtime_contract_version": 1,
+  "supports_dark_mode": true,
+  "runtime_mode": "bundled"
+}

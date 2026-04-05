@@ -1,0 +1,6 @@
+{
+  "project_type": "utilivo-plugin",
+  "slug": "1rm-calculator",
+  "sdk": "utilivo-sdk",
+  "schema_version": 1
+}
