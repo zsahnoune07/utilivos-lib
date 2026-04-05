@@ -1,0 +1,36 @@
+{
+  "id": "com.utilivo.plugin.heart-rate-zones",
+  "name": "Heart Rate Zones",
+  "slug": "heart-rate-zones",
+  "version": "1.0.0",
+  "description": "Estimate five training heart rate zones from age and resting heart rate using the Karvonen method.",
+  "author": "Utilivo Developer",
+  "entry": "tool/index.html",
+  "icon": "tool/assets/icon.png",
+  "thumb": "tool/assets/thumb.png",
+  "category": "health",
+  "tags": [
+    "health",
+    "fitness",
+    "tool",
+    "utilivo"
+  ],
+  "tier": "free",
+  "permissions": [
+    "storage"
+  ],
+  "ui_type": "page",
+  "api_version": "1",
+  "screenshots": [
+    "tool/assets/screenshots/home.png"
+  ],
+  "min_app_version": "1.0.0",
+  "locales": [
+    "en"
+  ],
+  "default_locale": "en",
+  "manifest_schema_version": 1,
+  "design_system_version": 1,
+  "supports_dark_mode": true,
+  "runtime_mode": "bundled"
+}

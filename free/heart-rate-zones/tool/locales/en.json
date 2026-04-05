@@ -1,0 +1,114 @@
+{
+  "page": {
+    "meta": {
+      "title": "Heart rate zones"
+    }
+  },
+  "common": {
+    "emptyValue": "—"
+  },
+  "form": {
+    "section": {
+      "title": "Training heart rate zones",
+      "description": "Estimate five training zones from your age and resting heart rate using the Karvonen method and a standard max heart rate formula."
+    },
+    "card": {
+      "title": "Your details",
+      "description": "For adults. Resting heart rate is typically measured at rest (for example, first thing in the morning)."
+    },
+    "fields": {
+      "age": {
+        "label": "Age",
+        "placeholder": "e.g. 35",
+        "unit": "years",
+        "help": "Whole years, 15–100.",
+        "errors": {
+          "required": "Enter your age.",
+          "integer": "Use a whole number of years.",
+          "range": "Age must be between 15 and 100."
+        }
+      },
+      "restingBpm": {
+        "label": "Resting heart rate",
+        "placeholder": "e.g. 58",
+        "unit": "bpm",
+        "help": "Beats per minute at rest, 40–120.",
+        "errors": {
+          "required": "Enter your resting heart rate.",
+          "integer": "Use a whole number of beats per minute.",
+          "range": "Resting heart rate must be between 40 and 120 bpm."
+        }
+      }
+    },
+    "errors": {
+      "restingVsMax": "This resting heart rate is too high for the estimated max heart rate from your age. Check your entries or ask a professional about measured max heart rate.",
+      "invalidReserve": "Heart rate reserve could not be calculated. Check your inputs."
+    },
+    "actions": {
+      "calculate": "Update zones",
+      "reset": "Reset"
+    }
+  },
+  "status": {
+    "empty": "Enter age and resting heart rate to see your zones.",
+    "incomplete": "Fix the highlighted fields to continue.",
+    "ready": "Inputs look good. Tap update zones to focus results."
+  },
+  "result": {
+    "section": {
+      "title": "Your zones",
+      "description": "Target heart rate ranges based on heart rate reserve."
+    },
+    "badges": {
+      "waiting": "Waiting for inputs",
+      "ready": "Zones calculated",
+      "checkInputs": "Check inputs"
+    },
+    "summary": {
+      "maxHr": "Estimated max heart rate",
+      "hrr": "Heart rate reserve",
+      "bpmValue": "{{value}} bpm"
+    },
+    "table": {
+      "caption": "Training zones by intensity and heart rate",
+      "zone": "Zone",
+      "intensity": "% of HRR",
+      "bpm": "Heart rate"
+    },
+    "zones": {
+      "percentRange": "{{low}}–{{high}}%",
+      "bpmRange": "{{low}}–{{high}} bpm",
+      "z1": {
+        "name": "Zone 1 — Recovery"
+      },
+      "z2": {
+        "name": "Zone 2 — Aerobic base"
+      },
+      "z3": {
+        "name": "Zone 3 — Aerobic"
+      },
+      "z4": {
+        "name": "Zone 4 — Threshold"
+      },
+      "z5": {
+        "name": "Zone 5 — VO2 max"
+      }
+    },
+    "disclaimer": {
+      "title": "Estimates only",
+      "body": "Max heart rate from age is an estimate. Measured max heart rate or lab testing is more accurate. This tool is for general fitness planning, not medical diagnosis."
+    }
+  },
+  "method": {
+    "title": "How this works",
+    "description": "The calculator uses well-known formulas used in fitness coaching.",
+    "points": {
+      "karvonen": "Karvonen: target BPM = resting HR + (fraction of heart rate reserve). Heart rate reserve = estimated max HR minus resting HR.",
+      "maxHr": "Estimated max HR = 220 minus age (common rule of thumb).",
+      "zones": "Zones use 10% steps of heart rate reserve from 50% through 100%."
+    }
+  },
+  "footer": {
+    "disclaimer": "Not medical advice. Consult a qualified professional before starting or changing an exercise program."
+  }
+}

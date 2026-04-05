@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page hrz-page">
+    <main class="uv-tool-page__content hrz-shell">
+      <section class="uv-card uv-section uv-pattern-form hrz-intro">
+        <h2 class="uv-section__title" data-i18n="form.section.title"></h2>
+        <p class="uv-section__description" data-i18n="form.section.description"></p>
+      </section>
+
+      <div class="uv-grid">
+        <section
+          class="uv-card uv-section hrz-form-card uv-col-8"
+          aria-labelledby="calculator-heading"
+        >
+          <h2 id="calculator-heading" class="uv-section__title" data-i18n="form.card.title"></h2>
+          <p class="uv-section__description" data-i18n="form.card.description"></p>
+
+          <form id="calculatorForm" class="hrz-form" novalidate>
+            <div class="hrz-input-grid">
+              <label for="age" class="uv-field">
+                <span class="uv-field__label" data-i18n="form.fields.age.label"></span>
+                <div id="ageShell" class="hrz-input-shell">
+                  <input
+                    id="age"
+                    class="uv-input hrz-input"
+                    type="number"
+                    inputmode="numeric"
+                    step="1"
+                    min="15"
+                    max="100"
+                    autocomplete="off"
+                    data-i18n-placeholder="form.fields.age.placeholder"
+                    aria-describedby="ageHelp ageError"
+                  />
+                  <span class="hrz-input-unit" data-i18n="form.fields.age.unit"></span>
+                </div>
+                <span id="ageHelp" class="uv-field__help" data-i18n="form.fields.age.help"></span>
+                <span id="ageError" class="hrz-error" aria-live="polite"></span>
+              </label>
+
+              <label for="restingBpm" class="uv-field">
+                <span class="uv-field__label" data-i18n="form.fields.restingBpm.label"></span>
+                <div id="restingBpmShell" class="hrz-input-shell">
+                  <input
+                    id="restingBpm"
+                    class="uv-input hrz-input"
+                    type="number"
+                    inputmode="numeric"
+                    step="1"
+                    min="40"
+                    max="120"
+                    autocomplete="off"
+                    data-i18n-placeholder="form.fields.restingBpm.placeholder"
+                    aria-describedby="restingBpmHelp restingBpmError"
+                  />
+                  <span class="hrz-input-unit" data-i18n="form.fields.restingBpm.unit"></span>
+                </div>
+                <span id="restingBpmHelp" class="uv-field__help" data-i18n="form.fields.restingBpm.help"></span>
+                <span id="restingBpmError" class="hrz-error" aria-live="polite"></span>
+              </label>
+            </div>
+
+            <p id="formStatus" class="hrz-status" role="status" aria-live="polite"></p>
+
+            <div class="uv-cluster hrz-actions">
+              <button
+                id="calculateButton"
+                class="uv-button"
+                type="submit"
+                disabled
+                data-i18n="form.actions.calculate"
+              ></button>
+              <button
+                id="resetButton"
+                class="uv-button uv-button--secondary"
+                type="button"
+                data-i18n="form.actions.reset"
+              ></button>
+            </div>
+          </form>
+        </section>
+
+        <section
+          id="resultCard"
+          class="uv-card uv-section hrz-result hrz-result--empty uv-col-4"
+          aria-labelledby="result-heading"
+          tabindex="-1"
+        >
+          <div class="hrz-section-head">
+            <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+            <p class="uv-section__description" data-i18n="result.section.description"></p>
+          </div>
+
+          <div class="hrz-result__body" role="status" aria-live="polite" aria-atomic="true">
+            <span id="resultBadge" class="uv-badge uv-badge--info"></span>
+            <dl class="hrz-summary">
+              <div class="hrz-summary__row">
+                <dt data-i18n="result.summary.maxHr"></dt>
+                <dd id="resultMaxHr">—</dd>
+              </div>
+              <div class="hrz-summary__row">
+                <dt data-i18n="result.summary.hrr"></dt>
+                <dd id="resultHrr">—</dd>
+              </div>
+            </dl>
+            <div id="zonesWrap" class="hrz-zones-wrap" hidden>
+              <table class="hrz-zones-table" aria-describedby="result-heading">
+                <caption class="hrz-sr-only" data-i18n="result.table.caption"></caption>
+                <thead>
+                  <tr>
+                    <th scope="col" data-i18n="result.table.zone"></th>
+                    <th scope="col" data-i18n="result.table.intensity"></th>
+                    <th scope="col" data-i18n="result.table.bpm"></th>
+                  </tr>
+                </thead>
+                <tbody id="zonesBody"></tbody>
+              </table>
+            </div>
+            <p id="resultFormulaError" class="hrz-result__message hrz-result__message--error" hidden></p>
+          </div>
+
+          <div class="uv-alert uv-alert--info hrz-disclaimer">
+            <strong data-i18n="result.disclaimer.title"></strong>
+            <p data-i18n="result.disclaimer.body"></p>
+          </div>
+        </section>
+      </div>
+
+      <section class="uv-card uv-section hrz-method" aria-labelledby="method-heading">
+        <h2 id="method-heading" class="uv-section__title" data-i18n="method.title"></h2>
+        <p class="uv-section__description" data-i18n="method.description"></p>
+        <ul class="hrz-method-list">
+          <li data-i18n="method.points.karvonen"></li>
+          <li data-i18n="method.points.maxHr"></li>
+          <li data-i18n="method.points.zones"></li>
+        </ul>
+      </section>
+
+      <footer class="hrz-footer">
+        <p class="hrz-footer__copy" data-i18n="footer.disclaimer"></p>
+      </footer>
+    </main>
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
