@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page">
+    <main class="uv-tool-page__content bu-shell">
+      <header class="uv-card uv-tool-page__header bu-hero">
+        <h1 class="uv-tool-page__title" data-i18n="page.title"></h1>
+        <p class="uv-tool-page__subtitle bu-hero__subtitle" data-i18n="page.subtitle"></p>
+      </header>
+
+      <section class="uv-card uv-section bu-card" aria-labelledby="validator-heading">
+        <div class="bu-section-head">
+          <h2 id="validator-heading" class="uv-section__title" data-i18n="validator.section.title"></h2>
+          <p class="uv-section__description" data-i18n="validator.section.description"></p>
+        </div>
+
+        <label for="addressInput" class="uv-field bu-field">
+          <span class="uv-field__label" data-i18n="validator.fields.address.label"></span>
+          <input
+            id="addressInput"
+            class="uv-input bu-input"
+            type="text"
+            spellcheck="false"
+            autocomplete="off"
+            data-i18n-placeholder="validator.fields.address.placeholder"
+          />
+        </label>
+
+        <div class="uv-cluster">
+          <button
+            id="validateAddress"
+            class="uv-button"
+            type="button"
+            data-i18n="validator.actions.validate"
+          ></button>
+          <button
+            id="clearValidator"
+            class="uv-button uv-button--secondary"
+            type="button"
+            data-i18n="common.actions.clear"
+          ></button>
+        </div>
+
+        <p id="validatorMessage" class="bu-message" role="status" aria-live="polite"></p>
+
+        <section class="bu-subsection" aria-labelledby="validator-report-heading">
+          <div class="bu-subsection__head">
+            <h3
+              id="validator-report-heading"
+              class="bu-subsection__title"
+              data-i18n="validator.report.title"
+            ></h3>
+            <p
+              class="bu-subsection__description"
+              data-i18n="validator.report.description"
+            ></p>
+          </div>
+
+          <div class="bu-fact-grid" data-i18n-aria-label="validator.report.title">
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.status"></span>
+              <span id="valStatus" class="bu-fact__value">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.encoding"></span>
+              <span id="valEncoding" class="bu-fact__value">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.network"></span>
+              <span id="valNetwork" class="bu-fact__value">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.type"></span>
+              <span id="valType" class="bu-fact__value">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.payload"></span>
+              <span id="valPayload" class="bu-fact__value bu-mono">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.checksum"></span>
+              <span id="valChecksum" class="bu-fact__value bu-mono">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.details"></span>
+              <span id="valDetails" class="bu-fact__value">-</span>
+            </article>
+            <article class="bu-fact">
+              <span class="bu-fact__label" data-i18n="validator.report.labels.script"></span>
+              <span id="valScript" class="bu-fact__value bu-mono">-</span>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="uv-card uv-section bu-card" aria-labelledby="notes-heading">
+        <h2 id="notes-heading" class="uv-section__title" data-i18n="notes.title"></h2>
+        <ul class="bu-notes">
+          <li data-i18n="notes.items.local"></li>
+          <li data-i18n="notes.items.secrets"></li>
+          <li data-i18n="notes.items.educational"></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

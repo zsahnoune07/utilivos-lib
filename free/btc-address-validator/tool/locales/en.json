@@ -1,0 +1,130 @@
+{
+  "page": {
+    "meta": {
+      "title": "BTC Address Validator"
+    },
+    "title": "BTC Address Validator",
+    "subtitle": "Validate Bitcoin addresses and WIF keys locally with checksum, payload, and script diagnostics."
+  },
+  "common": {
+    "actions": {
+      "clear": "Clear"
+    },
+    "empty": "-"
+  },
+  "validator": {
+    "section": {
+      "title": "Address Validator",
+      "description": "Validate Base58Check and SegWit inputs, then inspect their network, encoding, and payload."
+    },
+    "fields": {
+      "address": {
+        "label": "Bitcoin address or WIF key",
+        "placeholder": "e.g. 1BoatSLRHtKNngkdXEeobR76b53LETtpyT"
+      }
+    },
+    "actions": {
+      "validate": "Validate"
+    },
+    "messages": {
+      "validating": "Validating input...",
+      "success": "Input is valid.",
+      "empty": "Enter a Bitcoin address or WIF key."
+    },
+    "report": {
+      "title": "Validation report",
+      "description": "Inspect the decoded network, payload, checksum, and script template for the current input.",
+      "labels": {
+        "status": "Status",
+        "encoding": "Encoding",
+        "network": "Network",
+        "type": "Type",
+        "payload": "Payload",
+        "checksum": "Checksum",
+        "details": "Details",
+        "script": "scriptPubKey"
+      },
+      "status": {
+        "valid": "Valid",
+        "invalid": "Invalid"
+      },
+      "encoding": {
+        "base58check": "Base58Check",
+        "bech32": "Bech32",
+        "bech32m": "Bech32m"
+      },
+      "checksum": {
+        "embedded": "Embedded checksum verified",
+        "base58": "{{checksum}} (expected {{expected}})"
+      },
+      "networks": {
+        "mainnet": "Mainnet",
+        "testnet": "Testnet",
+        "regtest": "Regtest",
+        "unknown": "Unknown",
+        "unknownHrp": "Unknown ({{hrp}})"
+      },
+      "types": {
+        "p2pkh": "P2PKH",
+        "p2sh": "P2SH",
+        "wifCompressed": "WIF private key (compressed)",
+        "wifUncompressed": "WIF private key (uncompressed)",
+        "unknownBase58": "Unknown Base58 payload",
+        "p2wpkh": "P2WPKH",
+        "p2wsh": "P2WSH",
+        "p2tr": "P2TR (Taproot)",
+        "witness": "Witness v{{version}}"
+      },
+      "details": {
+        "base58Hash": "Version {{version}} with 20-byte hash160 payload.",
+        "base58ScriptHash": "Version {{version}} with 20-byte script hash payload.",
+        "base58UnknownVersion": "Unrecognized version byte {{version}}.",
+        "base58UnknownPayload": "Version {{version}} with {{length}}-byte payload.",
+        "wif": "Version {{version}} with {{length}}-byte private key payload.",
+        "segwit": "HRP {{hrp}}, witness version {{version}}, program length {{length}} bytes."
+      }
+    }
+  },
+  "notes": {
+    "title": "Notes",
+    "items": {
+      "local": "All calculations run locally in your browser.",
+      "secrets": "Never use online tools with production wallet secrets.",
+      "educational": "Validation confirms format and checksum only. It does not prove spendability or address ownership."
+    }
+  },
+  "errors": {
+    "unknown": "An unexpected error occurred.",
+    "cryptoUnavailable": "Web Crypto API is unavailable in this environment.",
+    "randomUnavailable": "Secure random generation is unavailable.",
+    "privateKeyLength": "Private key must be exactly 64 hex characters.",
+    "privateKeyRange": "Private key is out of range for secp256k1.",
+    "witnessData": "Unable to build witness data.",
+    "base58PayloadShort": "Base58 payload is too short.",
+    "wifLength": "WIF payload length is invalid.",
+    "wifCompressionMarker": "Invalid WIF compression marker.",
+    "segwitMissingVersion": "SegWit payload is missing witness version.",
+    "witnessVersionRange": "Witness version must be between 0 and 16.",
+    "segwitPadding": "SegWit data has invalid padding.",
+    "witnessProgramLength": "Witness program length must be between 2 and 40 bytes.",
+    "witnessV0Encoding": "Witness v0 addresses must use Bech32.",
+    "witnessV0ProgramLength": "Witness v0 program must be 20 or 32 bytes.",
+    "witnessV1Encoding": "Witness v1-v16 addresses must use Bech32m.",
+    "scalarRange": "Private key must be in range 1..n-1.",
+    "publicKeyDerivation": "Failed to derive public key.",
+    "base58CheckShort": "Base58Check data is too short.",
+    "base58Checksum": "Base58 checksum mismatch (got {{got}}, expected {{expected}}).",
+    "base58Empty": "Base58 input is empty.",
+    "base58Character": "Invalid Base58 character: {{char}}",
+    "bech32Length": "Bech32 length must be between 8 and 90 characters.",
+    "bech32Characters": "Bech32 contains invalid characters.",
+    "bech32Case": "Bech32 cannot mix upper and lower case.",
+    "bech32Separator": "Bech32 separator position is invalid.",
+    "bech32Character": "Invalid Bech32 character: {{char}}",
+    "bech32Checksum": "Bech32 checksum is invalid.",
+    "hexEvenLength": "Hex string must have an even length.",
+    "hexInvalid": "Invalid hex string.",
+    "integerSize": "Integer does not fit in the target byte length.",
+    "modInverse": "Modular inverse does not exist."
+  }
+}
