@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page pace-page">
+    <main class="uv-tool-page__content pace-shell">
+      <header class="uv-tool-page__header pace-header">
+        <h1 class="uv-tool-page__title" data-i18n="page.title"></h1>
+        <p class="uv-tool-page__subtitle" data-i18n="page.subtitle"></p>
+      </header>
+
+      <div class="pace-actions">
+        <button id="clearAll" class="uv-button uv-button--secondary" type="button" data-i18n="actions.clear"></button>
+      </div>
+
+      <section class="uv-card uv-section pace-section" aria-labelledby="speeds-heading">
+        <h2 id="speeds-heading" class="uv-section__title" data-i18n="sections.speeds.title"></h2>
+        <p class="uv-section__description" data-i18n="sections.speeds.description"></p>
+        <div class="pace-input-grid pace-input-grid--speeds">
+          <label class="uv-field" for="mph">
+            <span class="uv-field__label" data-i18n="fields.mph.label"></span>
+            <div class="pace-input-with-unit">
+              <input
+                id="mph"
+                class="uv-input pace-input pace-input--speed-decimal"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                data-i18n-placeholder="fields.mph.placeholder"
+                aria-describedby="speeds-help"
+              />
+              <span class="pace-unit" data-i18n="fields.mph.unit"></span>
+            </div>
+          </label>
+          <label class="uv-field" for="kph">
+            <span class="uv-field__label" data-i18n="fields.kph.label"></span>
+            <div class="pace-input-with-unit">
+              <input
+                id="kph"
+                class="uv-input pace-input pace-input--speed-decimal"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                data-i18n-placeholder="fields.kph.placeholder"
+                aria-describedby="speeds-help"
+              />
+              <span class="pace-unit" data-i18n="fields.kph.unit"></span>
+            </div>
+          </label>
+          <label class="uv-field" for="mps">
+            <span class="uv-field__label" data-i18n="fields.mps.label"></span>
+            <div class="pace-input-with-unit">
+              <input
+                id="mps"
+                class="uv-input pace-input pace-input--speed-decimal"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                data-i18n-placeholder="fields.mps.placeholder"
+                aria-describedby="speeds-help"
+              />
+              <span class="pace-unit" data-i18n="fields.mps.unit"></span>
+            </div>
+          </label>
+        </div>
+        <p id="speeds-help" class="uv-field__help" data-i18n="sections.speeds.help"></p>
+      </section>
+
+      <section class="uv-grid pace-grid">
+        <section class="uv-card uv-section pace-section uv-col-6" aria-labelledby="pace-mile-heading">
+          <h2 id="pace-mile-heading" class="uv-section__title" data-i18n="sections.paceMile.title"></h2>
+          <p class="uv-section__description" data-i18n="sections.paceMile.description"></p>
+          <div class="pace-input-grid pace-input-grid--pace">
+            <label class="uv-field" for="paceMileMin">
+              <span class="uv-field__label" data-i18n="fields.pace.min.label"></span>
+              <input
+                id="paceMileMin"
+                class="uv-input pace-input pace-input--digits-only"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                autocomplete="off"
+                data-i18n-placeholder="fields.pace.min.placeholder"
+              />
+            </label>
+            <label class="uv-field" for="paceMileSec">
+              <span class="uv-field__label" data-i18n="fields.pace.sec.label"></span>
+              <input
+                id="paceMileSec"
+                class="uv-input pace-input pace-input--digits-only"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                autocomplete="off"
+                data-i18n-placeholder="fields.pace.sec.placeholder"
+              />
+            </label>
+          </div>
+          <p class="uv-field__help" data-i18n="sections.paceMile.help"></p>
+        </section>
+
+        <section class="uv-card uv-section pace-section uv-col-6" aria-labelledby="pace-km-heading">
+          <h2 id="pace-km-heading" class="uv-section__title" data-i18n="sections.paceKm.title"></h2>
+          <p class="uv-section__description" data-i18n="sections.paceKm.description"></p>
+          <div class="pace-input-grid pace-input-grid--pace">
+            <label class="uv-field" for="paceKmMin">
+              <span class="uv-field__label" data-i18n="fields.pace.min.label"></span>
+              <input
+                id="paceKmMin"
+                class="uv-input pace-input pace-input--digits-only"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                autocomplete="off"
+                data-i18n-placeholder="fields.pace.min.placeholder"
+              />
+            </label>
+            <label class="uv-field" for="paceKmSec">
+              <span class="uv-field__label" data-i18n="fields.pace.sec.label"></span>
+              <input
+                id="paceKmSec"
+                class="uv-input pace-input pace-input--digits-only"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                autocomplete="off"
+                data-i18n-placeholder="fields.pace.sec.placeholder"
+              />
+            </label>
+          </div>
+          <p class="uv-field__help" data-i18n="sections.paceKm.help"></p>
+        </section>
+      </section>
+
+      <section class="uv-card uv-section pace-section" aria-labelledby="races-heading">
+        <h2 id="races-heading" class="uv-section__title" data-i18n="sections.races.title"></h2>
+        <p class="uv-section__description" data-i18n="sections.races.description"></p>
+
+        <div class="pace-race-rows">
+          <div class="pace-race-row" role="group" data-i18n-aria-label="races.km5.aria">
+            <span class="pace-race-label" data-i18n="races.km5.label"></span>
+            <div class="pace-race-fields">
+              <label class="uv-field pace-race-field" for="raceKm5H">
+                <span class="uv-field__label" data-i18n="fields.race.hours"></span>
+                <input id="raceKm5H" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceKm5M">
+                <span class="uv-field__label" data-i18n="fields.race.mins"></span>
+                <input id="raceKm5M" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceKm5S">
+                <span class="uv-field__label" data-i18n="fields.race.secs"></span>
+                <input id="raceKm5S" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+            </div>
+          </div>
+
+          <div class="pace-race-row" role="group" data-i18n-aria-label="races.km10.aria">
+            <span class="pace-race-label" data-i18n="races.km10.label"></span>
+            <div class="pace-race-fields">
+              <label class="uv-field pace-race-field" for="raceKm10H">
+                <span class="uv-field__label" data-i18n="fields.race.hours"></span>
+                <input id="raceKm10H" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceKm10M">
+                <span class="uv-field__label" data-i18n="fields.race.mins"></span>
+                <input id="raceKm10M" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceKm10S">
+                <span class="uv-field__label" data-i18n="fields.race.secs"></span>
+                <input id="raceKm10S" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+            </div>
+          </div>
+
+          <div class="pace-race-row" role="group" data-i18n-aria-label="races.half.aria">
+            <span class="pace-race-label" data-i18n="races.half.label"></span>
+            <div class="pace-race-fields">
+              <label class="uv-field pace-race-field" for="raceHalfH">
+                <span class="uv-field__label" data-i18n="fields.race.hours"></span>
+                <input id="raceHalfH" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceHalfM">
+                <span class="uv-field__label" data-i18n="fields.race.mins"></span>
+                <input id="raceHalfM" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceHalfS">
+                <span class="uv-field__label" data-i18n="fields.race.secs"></span>
+                <input id="raceHalfS" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+            </div>
+          </div>
+
+          <div class="pace-race-row" role="group" data-i18n-aria-label="races.marathon.aria">
+            <span class="pace-race-label" data-i18n="races.marathon.label"></span>
+            <div class="pace-race-fields">
+              <label class="uv-field pace-race-field" for="raceMarathonH">
+                <span class="uv-field__label" data-i18n="fields.race.hours"></span>
+                <input id="raceMarathonH" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceMarathonM">
+                <span class="uv-field__label" data-i18n="fields.race.mins"></span>
+                <input id="raceMarathonM" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+              <label class="uv-field pace-race-field" for="raceMarathonS">
+                <span class="uv-field__label" data-i18n="fields.race.secs"></span>
+                <input id="raceMarathonS" class="uv-input pace-input pace-input--digits-only" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="pace-footer">
+        <p class="uv-text-body-sm uv-text-muted" data-i18n="footer.note"></p>
+      </footer>
+    </main>
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+/* Layout helpers; design tokens come from the host / utilivo framework only. */
+
+.pace-shell {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.pace-header {
+  margin-bottom: var(--uv-space-4);
+}
+
+.pace-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--uv-space-4);
+}
+
+.pace-section + .pace-section {
+  margin-top: var(--uv-space-4);
+}
+
+.pace-grid {
+  margin-top: var(--uv-space-4);
+}
+
+.pace-input-grid {
+  display: grid;
+  gap: var(--uv-space-4);
+}
+
+@media (min-width: 36rem) {
+  .pace-input-grid--speeds {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pace-input-grid--pace {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pace-input-with-unit {
+  display: flex;
+  align-items: stretch;
+  gap: var(--uv-space-2);
+}
+
+.pace-input-with-unit .pace-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.pace-unit {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: var(--uv-font-size-body-sm);
+  color: var(--uv-color-muted);
+  opacity: 0.85;
+}
+
+.pace-race-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-5);
+}
+
+.pace-race-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uv-space-3);
+}
+
+@media (min-width: 40rem) {
+  .pace-race-row {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: var(--uv-space-4);
+  }
+
+  .pace-race-label {
+    flex: 0 0 7rem;
+    padding-bottom: var(--uv-space-2);
+    font-weight: 600;
+  }
+}
+
+.pace-race-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--uv-space-3);
+  flex: 1;
+}
+
+.pace-race-field .uv-field__label {
+  font-size: var(--uv-font-size-body-sm);
+}
+
+.pace-footer {
+  margin-top: var(--uv-space-6);
+  padding-bottom: var(--uv-space-4);
+}

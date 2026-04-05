@@ -1,0 +1,86 @@
+{
+  "page": {
+    "meta": {
+      "title": "Pace Converter"
+    },
+    "title": "Pace converter",
+    "subtitle": "Convert running speeds (mph, km/h, m/s), pace per mile or kilometer, and finish times for common race distances. Enter any field to update the rest."
+  },
+  "actions": {
+    "clear": "Clear all"
+  },
+  "sections": {
+    "speeds": {
+      "title": "Speeds",
+      "description": "Treadmill-style speeds. Enter one value to derive pace and race times.",
+      "help": "Digits only plus at most one decimal separator (. or ,). No letters or other symbols. Up to two decimal places when calculated (e.g. 6.5 mph). Leave blank to use pace or a finish time below."
+    },
+    "paceMile": {
+      "title": "Pace per mile",
+      "description": "Minutes and seconds to cover one mile.",
+      "help": "Whole numbers only (no decimals). Seconds 0–59. Example: 9 minutes 30 seconds per mile."
+    },
+    "paceKm": {
+      "title": "Pace per kilometer",
+      "description": "Minutes and seconds to cover one kilometer.",
+      "help": "Whole numbers only (no decimals). Seconds 0–59. Example: 5 minutes 45 seconds per kilometer."
+    },
+    "races": {
+      "title": "Finish times",
+      "description": "Total time for each distance at the current speed. Hours, minutes, and seconds are whole numbers only. If speeds and both paces are empty, a valid time in any row (5 km through marathon, in that order) sets the speed."
+    }
+  },
+  "fields": {
+    "mph": {
+      "label": "Miles per hour",
+      "placeholder": "e.g. 6.5",
+      "unit": "mph"
+    },
+    "kph": {
+      "label": "Kilometers per hour",
+      "placeholder": "e.g. 10.5",
+      "unit": "km/h"
+    },
+    "mps": {
+      "label": "Meters per second",
+      "placeholder": "e.g. 2.9",
+      "unit": "m/s"
+    },
+    "pace": {
+      "min": {
+        "label": "Minutes",
+        "placeholder": "0"
+      },
+      "sec": {
+        "label": "Seconds",
+        "placeholder": "0"
+      }
+    },
+    "race": {
+      "hours": "Hours",
+      "mins": "Minutes",
+      "secs": "Seconds"
+    }
+  },
+  "races": {
+    "km5": {
+      "label": "5 km",
+      "aria": "5 kilometer finish time"
+    },
+    "km10": {
+      "label": "10 km",
+      "aria": "10 kilometer finish time"
+    },
+    "half": {
+      "label": "Half marathon",
+      "aria": "Half marathon finish time"
+    },
+    "marathon": {
+      "label": "Marathon",
+      "aria": "Marathon finish time"
+    }
+  },
+  "footer": {
+    "note": "Distances use 5 km, 10 km, 21.0975 km (half), and 42.195 km (marathon). Conversions follow standard mile and kilometer definitions (1 mi = 1609.344 m)."
+  }
+}
