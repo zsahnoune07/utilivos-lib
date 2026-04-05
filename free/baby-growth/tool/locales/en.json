@@ -1,0 +1,134 @@
+{
+  "page": {
+    "meta": {
+      "title": "Baby growth percentiles"
+    },
+    "title": "Baby growth percentiles",
+    "subtitle": "WHO Child Growth Standards (0-24 months): weight, length, and optional head circumference vs age. Age uses today's date on your device. Educational only—not medical advice."
+  },
+  "overview": {
+    "title": "How this works",
+    "description": "Choose sex, enter birth date and current measurements. Percentiles use WHO-based LMS data (CDC-published tables) compared to your child’s age as of today.",
+    "points": {
+      "who": "Based on WHO Child Growth Standards for children under 2 years.",
+      "range": "A wide range of percentiles can be healthy; steady growth over time matters more than any single number.",
+      "doctor": "Regular check-ups with your clinician are essential—this tool does not replace them."
+    }
+  },
+  "form": {
+    "section": {
+      "title": "Measurements",
+      "description": "Birth date must be in the past, and your child must be under 2 years old today (under 730 days since birth)."
+    },
+    "units": {
+      "label": "Units",
+      "aria": "Unit system",
+      "metric": "Metric (kg, cm)",
+      "imperial": "Imperial (lb, oz, ft, in)"
+    },
+    "sex": {
+      "label": "Sex",
+      "boy": "Boy",
+      "girl": "Girl"
+    },
+    "birthDate": {
+      "label": "Birth date",
+      "help": "Shown in your device’s date format. Age is calculated through today."
+    },
+    "weight": {
+      "label": "Weight",
+      "kg": "Kilograms",
+      "lb": "Pounds",
+      "oz": "Ounces"
+    },
+    "length": {
+      "label": "Length / height",
+      "cm": "Centimeters",
+      "ft": "Feet",
+      "in": "Inches",
+      "help": "Recumbent length is usual under 2 years; standing height is fine for older infants if that is what you measured."
+    },
+    "head": {
+      "label": "Head circumference (optional)",
+      "help": "Centimeters only. Leave blank to skip."
+    },
+    "actions": {
+      "calculate": "Calculate percentiles",
+      "reset": "Reset"
+    }
+  },
+  "status": {
+    "empty": "Fill the form to calculate percentiles.",
+    "incomplete": "Some fields need attention before calculating.",
+    "ready": "Ready to calculate."
+  },
+  "validation": {
+    "birth_date": "Enter a valid birth date.",
+    "birth_future": "Birth date cannot be after today.",
+    "age_two_years": "This tool supports ages under 2 years (under 730 days since birth).",
+    "weight_required": "Enter weight.",
+    "weight_range": "Weight looks outside the expected range for this chart (about 0.5–25 kg). Check the value.",
+    "length_required": "Enter length or height.",
+    "length_range": "Length looks outside the expected range for this chart (about 30–110 cm). Check the value.",
+    "head_invalid": "Enter a valid head circumference or leave blank.",
+    "head_range": "Head circumference looks outside the usual range (about 25–55 cm). Check the value."
+  },
+  "result": {
+    "section": {
+      "title": "Percentiles",
+      "description": "Percentiles compare your child with others of the same age and sex in the reference population.",
+      "empty": "Results appear here after you calculate."
+    },
+    "badges": {
+      "waiting": "Waiting"
+    },
+    "age": "As of {{today}}: {{days}} days old (about {{months}} months).",
+    "age_months_only": "{{months}} months",
+    "weight_label": "Weight for age",
+    "length_label": "Length for age",
+    "head_label": "Head circumference for age",
+    "percentile_value": "{{value}}th percentile",
+    "percentile_value_low": "< 1st percentile",
+    "percentile_value_high": "> 99th percentile",
+    "percentile": {
+      "unknown": "Could not compute a percentile for this value.",
+      "typical": "Within a common range for age.",
+      "lt_3": "Below the 3rd percentile for this reference—discuss persistent low percentiles with your clinician.",
+      "gt_99": "Above the 99th percentile for this reference—discuss with your clinician if measurements stay very high or low.",
+      "lt_half": "Below the 1st percentile on this scale—verify the measurement and talk to your clinician if concerned."
+    },
+    "z_label": "z-score (approx.): {{z}}"
+  },
+  "chart": {
+    "title": "Compared to WHO reference (same age)",
+    "description": "Shaded band spans about the 3rd to 97th percentile at this age; vertical line is the median. Dot is your child’s measurement.",
+    "legend_note": "Band limits use the LMS inverse at fixed z-scores (~3rd and ~97th); exact cutoffs can differ slightly from published tables.",
+    "svg_aria": "{{label}} comparison chart",
+    "labels": {
+      "p3": "~3rd pct",
+      "median": "Median",
+      "you": "Your child",
+      "p97": "~97th pct"
+    },
+    "units": {
+      "kg": "kg",
+      "cm": "cm"
+    }
+  },
+  "details": {
+    "sources": {
+      "title": "Data sources",
+      "body": "LMS parameters are from the CDC distribution of WHO Child Growth Standards (birth–24 months), the same family of curves used for WHO weight-for-age, length-for-age, and head circumference-for-age charts."
+    },
+    "method": {
+      "title": "Method",
+      "body": "Age is whole calendar days from birth through today on your device. Months for the curves use days ÷ 30.4375. LMS rows are linearly interpolated between completed months."
+    }
+  },
+  "footer": {
+    "disclaimer": "Educational tool only. Not for diagnosis or treatment. Consult a qualified health professional about your child’s growth."
+  },
+  "common": {
+    "emptyValue": "—"
+  }
+}

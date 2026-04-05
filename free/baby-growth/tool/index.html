@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./utilivo/patterns.css" />
+    <link rel="stylesheet" href="./utilivo/utilities.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page bg-page">
+
+    <main class="uv-tool-page__content bg-shell">
+      <section class="uv-card uv-section bg-card" aria-labelledby="form-heading">
+        <div class="bg-section-head">
+          <h2 id="form-heading" class="uv-section__title" data-i18n="form.section.title"></h2>
+          <p class="uv-section__description" data-i18n="form.section.description"></p>
+        </div>
+
+        <form id="calculatorForm" class="bg-form" novalidate>
+          <div class="bg-field">
+            <span class="uv-field__label" data-i18n="form.units.label"></span>
+            <div class="bg-unit-tabs" role="group" data-i18n-aria-label="form.units.aria">
+              <button
+                type="button"
+                id="unitMetric"
+                class="bg-unit-tab"
+                aria-selected="false"
+                data-i18n="form.units.metric"
+              ></button>
+              <button
+                type="button"
+                id="unitImperial"
+                class="bg-unit-tab"
+                aria-selected="true"
+                data-i18n="form.units.imperial"
+              ></button>
+            </div>
+          </div>
+
+          <div class="uv-field bg-field">
+            <span class="uv-field__label" data-i18n="form.sex.label"></span>
+            <div
+              id="sexPick"
+              class="bg-sex-pick"
+              role="radiogroup"
+              data-i18n-aria-label="form.sex.label"
+            >
+              <button
+                type="button"
+                id="sexGirl"
+                class="bg-sex-btn bg-sex-btn--girl"
+                role="radio"
+                aria-checked="false"
+              >
+                <svg class="bg-sex-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="8" r="3" fill="currentColor" />
+                  <path fill="currentColor" d="M6 12h12l-3.2 10H9.2L6 12z" />
+                </svg>
+                <span data-i18n="form.sex.girl"></span>
+              </button>
+              <button
+                type="button"
+                id="sexBoy"
+                class="bg-sex-btn bg-sex-btn--boy"
+                role="radio"
+                aria-checked="true"
+              >
+                <svg class="bg-sex-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="8" r="3" fill="currentColor" />
+                  <path fill="currentColor" d="M7 12.5h10V22H7z" />
+                </svg>
+                <span data-i18n="form.sex.boy"></span>
+              </button>
+            </div>
+          </div>
+
+          <label for="birthDate" class="uv-field bg-field">
+            <span class="uv-field__label" data-i18n="form.birthDate.label"></span>
+            <div id="birthDateShell" class="bg-input-shell">
+              <input
+                id="birthDate"
+                name="birthDate"
+                class="uv-input"
+                type="date"
+                autocomplete="bday"
+                aria-describedby="birthDateHelp birthDateError"
+              />
+            </div>
+            <span id="birthDateHelp" class="uv-field__help" data-i18n="form.birthDate.help"></span>
+            <span id="birthDateError" class="bg-error" aria-live="polite"></span>
+          </label>
+
+          <div id="metricFields" class="bg-unit-panel" hidden>
+            <label for="weightKg" class="uv-field bg-field">
+              <span class="uv-field__label" data-i18n="form.weight.label"></span>
+              <div id="weightKgShell" class="bg-input-shell">
+                <input
+                  id="weightKg"
+                  name="weightKg"
+                  class="uv-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.001"
+                  min="0"
+                  autocomplete="off"
+                  aria-describedby="weightKgError"
+                />
+                <span class="bg-input-unit" data-i18n="form.weight.kg"></span>
+              </div>
+              <span id="weightKgError" class="bg-error" aria-live="polite"></span>
+            </label>
+
+            <label for="lengthCm" class="uv-field bg-field">
+              <span class="uv-field__label" data-i18n="form.length.label"></span>
+              <div id="lengthCmShell" class="bg-input-shell">
+                <input
+                  id="lengthCm"
+                  name="lengthCm"
+                  class="uv-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.1"
+                  min="0"
+                  autocomplete="off"
+                  aria-describedby="lengthCmHelp lengthCmError"
+                />
+                <span class="bg-input-unit" data-i18n="form.length.cm"></span>
+              </div>
+              <span id="lengthCmHelp" class="uv-field__help" data-i18n="form.length.help"></span>
+              <span id="lengthCmError" class="bg-error" aria-live="polite"></span>
+            </label>
+          </div>
+
+          <div id="imperialFields" class="bg-unit-panel">
+            <div class="bg-grid-2">
+              <label for="weightLb" class="uv-field bg-field">
+                <span class="uv-field__label" data-i18n="form.weight.label"></span>
+                <div id="weightLbShell" class="bg-input-shell">
+                  <input
+                    id="weightLb"
+                    name="weightLb"
+                    class="uv-input"
+                    type="number"
+                    inputmode="decimal"
+                    step="0.1"
+                    min="0"
+                    autocomplete="off"
+                    aria-describedby="weightLbError"
+                  />
+                  <span class="bg-input-unit" data-i18n="form.weight.lb"></span>
+                </div>
+                <span id="weightLbError" class="bg-error" aria-live="polite"></span>
+              </label>
+
+              <label for="weightOz" class="uv-field bg-field">
+                <span class="bg-label-spacer uv-field__label" aria-hidden="true"></span>
+                <div id="weightOzShell" class="bg-input-shell">
+                  <input
+                    id="weightOz"
+                    name="weightOz"
+                    class="uv-input"
+                    type="number"
+                    inputmode="decimal"
+                    step="0.1"
+                    min="0"
+                    autocomplete="off"
+                    aria-describedby="weightOzError"
+                  />
+                  <span class="bg-input-unit" data-i18n="form.weight.oz"></span>
+                </div>
+                <span id="weightOzError" class="bg-error" aria-live="polite"></span>
+              </label>
+            </div>
+
+            <div class="bg-grid-2">
+              <label for="lengthFt" class="uv-field bg-field">
+                <span class="uv-field__label" data-i18n="form.length.label"></span>
+                <div id="lengthFtShell" class="bg-input-shell">
+                  <input
+                    id="lengthFt"
+                    name="lengthFt"
+                    class="uv-input"
+                    type="number"
+                    inputmode="numeric"
+                    step="1"
+                    min="0"
+                    autocomplete="off"
+                    aria-describedby="lengthFtHelp lengthFtError"
+                  />
+                  <span class="bg-input-unit" data-i18n="form.length.ft"></span>
+                </div>
+                <span id="lengthFtHelp" class="uv-field__help" data-i18n="form.length.help"></span>
+                <span id="lengthFtError" class="bg-error" aria-live="polite"></span>
+              </label>
+
+              <label for="lengthIn" class="uv-field bg-field">
+                <span class="bg-label-spacer uv-field__label" aria-hidden="true"></span>
+                <div id="lengthInShell" class="bg-input-shell">
+                  <input
+                    id="lengthIn"
+                    name="lengthIn"
+                    class="uv-input"
+                    type="number"
+                    inputmode="decimal"
+                    step="0.1"
+                    min="0"
+                    autocomplete="off"
+                    aria-describedby="lengthInError"
+                  />
+                  <span class="bg-input-unit" data-i18n="form.length.in"></span>
+                </div>
+                <span id="lengthInError" class="bg-error" aria-live="polite"></span>
+              </label>
+            </div>
+          </div>
+
+          <label for="headCm" class="uv-field bg-field">
+            <span class="uv-field__label" data-i18n="form.head.label"></span>
+            <div id="headCmShell" class="bg-input-shell">
+              <input
+                id="headCm"
+                name="headCm"
+                class="uv-input"
+                type="number"
+                inputmode="decimal"
+                step="0.1"
+                min="0"
+                autocomplete="off"
+                aria-describedby="headCmHelp headCmError"
+              />
+              <span class="bg-input-unit" data-i18n="form.length.cm"></span>
+            </div>
+            <span id="headCmHelp" class="uv-field__help" data-i18n="form.head.help"></span>
+            <span id="headCmError" class="bg-error" aria-live="polite"></span>
+          </label>
+
+          <p id="formStatus" class="bg-status" role="status" aria-live="polite"></p>
+
+          <div class="uv-cluster bg-actions">
+            <button id="calculateButton" class="uv-button" type="submit" disabled data-i18n="form.actions.calculate"></button>
+            <button
+              id="resetButton"
+              class="uv-button uv-button--secondary"
+              type="button"
+              data-i18n="form.actions.reset"
+            ></button>
+          </div>
+        </form>
+      </section>
+
+      <section
+        id="resultCard"
+        class="uv-card uv-section bg-card bg-result bg-result--empty"
+        aria-labelledby="result-heading"
+        tabindex="-1"
+      >
+        <div class="bg-section-head">
+          <div class="bg-result__headline">
+            <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+            <span id="resultBadge" class="uv-badge uv-badge--info" data-i18n="result.badges.waiting"></span>
+          </div>
+          <p class="uv-section__description" data-i18n="result.section.description"></p>
+        </div>
+
+        <div id="resultBody" class="bg-result__body" role="status" aria-live="polite" aria-atomic="true">
+          <p id="resultAge" class="bg-result__age uv-text-muted"></p>
+          <p id="resultEmpty" class="bg-result__empty" data-i18n="result.section.empty"></p>
+
+          <div id="resultRows" class="bg-result-rows" hidden>
+            <article class="bg-perc-row" data-row="weight">
+              <div class="bg-perc-row__head">
+                <h3 class="bg-perc-row__title" data-i18n="result.weight_label"></h3>
+                <strong id="pctWeight" class="bg-perc-row__value"></strong>
+              </div>
+              <div class="bg-perc-bar" aria-hidden="true">
+                <div class="bg-perc-bar__track">
+                  <div id="barWeight" class="bg-perc-bar__fill"></div>
+                </div>
+              </div>
+              <p id="capWeight" class="bg-perc-row__caption uv-text-body-sm"></p>
+              <p id="zWeight" class="bg-perc-row__z uv-text-body-sm uv-text-muted"></p>
+            </article>
+
+            <article class="bg-perc-row" data-row="length">
+              <div class="bg-perc-row__head">
+                <h3 class="bg-perc-row__title" data-i18n="result.length_label"></h3>
+                <strong id="pctLength" class="bg-perc-row__value"></strong>
+              </div>
+              <div class="bg-perc-bar" aria-hidden="true">
+                <div class="bg-perc-bar__track">
+                  <div id="barLength" class="bg-perc-bar__fill"></div>
+                </div>
+              </div>
+              <p id="capLength" class="bg-perc-row__caption uv-text-body-sm"></p>
+              <p id="zLength" class="bg-perc-row__z uv-text-body-sm uv-text-muted"></p>
+            </article>
+
+            <article id="rowHead" class="bg-perc-row" data-row="head" hidden>
+              <div class="bg-perc-row__head">
+                <h3 class="bg-perc-row__title" data-i18n="result.head_label"></h3>
+                <strong id="pctHead" class="bg-perc-row__value"></strong>
+              </div>
+              <div class="bg-perc-bar" aria-hidden="true">
+                <div class="bg-perc-bar__track">
+                  <div id="barHead" class="bg-perc-bar__fill"></div>
+                </div>
+              </div>
+              <p id="capHead" class="bg-perc-row__caption uv-text-body-sm"></p>
+              <p id="zHead" class="bg-perc-row__z uv-text-body-sm uv-text-muted"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="chartCard"
+        class="uv-card uv-section bg-card bg-chart-card"
+        aria-labelledby="chart-heading"
+        hidden
+      >
+        <div class="bg-section-head">
+          <h2 id="chart-heading" class="uv-section__title" data-i18n="chart.title"></h2>
+          <p class="uv-section__description" data-i18n="chart.description"></p>
+        </div>
+        <div id="chartBody" class="bg-chart-body"></div>
+        <p class="bg-chart-legend-note uv-text-body-sm uv-text-muted" data-i18n="chart.legend_note"></p>
+      </section>
+
+      <details class="uv-card bg-details">
+        <summary class="bg-details__summary" data-i18n="details.sources.title"></summary>
+        <div class="bg-details__body">
+          <p class="uv-section__description" data-i18n="details.sources.body"></p>
+        </div>
+      </details>
+
+      <details class="uv-card bg-details">
+        <summary class="bg-details__summary" data-i18n="details.method.title"></summary>
+        <div class="bg-details__body">
+          <p class="uv-section__description" data-i18n="details.method.body"></p>
+        </div>
+      </details>
+    </main>
+
+    <footer class="bg-footer">
+      <p class="bg-footer__copy" data-i18n="footer.disclaimer"></p>
+    </footer>
+
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
