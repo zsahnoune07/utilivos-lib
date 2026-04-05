@@ -1,0 +1,206 @@
+{
+  "page": {
+    "meta": {
+      "title": "BMI Calculator"
+    },
+    "eyebrow": "Adult wellness tool",
+    "title": "BMI Calculator",
+    "subtitle": "Estimate body mass index instantly in metric or imperial units."
+  },
+  "overview": {
+    "badges": {
+      "dual_units": "Metric + imperial",
+      "healthy_range": "Healthy-weight range",
+      "local_only": "Local-only restore"
+    }
+  },
+  "form": {
+    "section": {
+      "title": "Enter your measurements",
+      "description": "Switch units at any time. Valid entries update the result automatically, and the review button jumps to the result on smaller screens."
+    },
+    "units": {
+      "label": "Units",
+      "aria": "Measurement system",
+      "metric": "Metric",
+      "imperial": "Imperial"
+    },
+    "fields": {
+      "heightCm": {
+        "label": "Height",
+        "unit": "cm",
+        "placeholder": "180",
+        "help": "Adult height between 100 and 250 cm.",
+        "errors": {
+          "required": "Enter height in centimeters.",
+          "number": "Height must be a number.",
+          "range": "Height must be between 100 and 250 cm."
+        }
+      },
+      "weightKg": {
+        "label": "Weight",
+        "unit": "kg",
+        "placeholder": "72.5",
+        "help": "Adult weight between 20 and 400 kg.",
+        "errors": {
+          "required": "Enter weight in kilograms.",
+          "number": "Weight must be a number.",
+          "range": "Weight must be between 20 and 400 kg."
+        }
+      },
+      "heightFt": {
+        "label": "Height",
+        "unit": "ft",
+        "placeholder": "5",
+        "help": "Whole feet only.",
+        "errors": {
+          "required": "Enter feet.",
+          "number": "Feet must be a number.",
+          "integer": "Feet must be a whole number.",
+          "range": "Feet must be between 0 and 8.",
+          "combinedRange": "Combined height must be between 100 and 250 cm."
+        }
+      },
+      "heightIn": {
+        "label": "Inches",
+        "unit": "in",
+        "placeholder": "10.9",
+        "help": "Use inches from 0 to 11.9.",
+        "errors": {
+          "required": "Enter inches.",
+          "number": "Inches must be a number.",
+          "range": "Inches must be between 0 and 11.9.",
+          "combinedRange": "Combined height must be between 100 and 250 cm."
+        }
+      },
+      "weightLb": {
+        "label": "Weight",
+        "unit": "lb",
+        "placeholder": "160",
+        "help": "Adult weight between about 44.1 and 881.9 lb.",
+        "errors": {
+          "required": "Enter weight in pounds.",
+          "number": "Weight must be a number.",
+          "range": "Weight must be between about 44.1 and 881.9 lb."
+        }
+      }
+    },
+    "actions": {
+      "review": "Review result",
+      "reset": "Reset"
+    }
+  },
+  "status": {
+    "empty": "Enter height and weight to calculate BMI.",
+    "incomplete": "Complete or correct the highlighted fields to finish the calculation.",
+    "ready": {
+      "metric": "BMI and healthy-weight range are ready.",
+      "imperial": "BMI and healthy-weight range are ready."
+    }
+  },
+  "result": {
+    "section": {
+      "title": "Your result",
+      "description": "BMI is calculated from weight and height and shown with the standard adult category thresholds."
+    },
+    "score": {
+      "label": "BMI"
+    },
+    "badges": {
+      "waiting": "Awaiting valid inputs",
+      "underweight": "Underweight",
+      "healthy": "Healthy range",
+      "overweight": "Overweight",
+      "obesity": "Obesity"
+    },
+    "empty": {
+      "category": "BMI not available yet",
+      "body": "Add valid adult measurements to calculate BMI and a healthy-weight range for the entered height."
+    },
+    "categories": {
+      "underweight": "Below the standard healthy adult BMI range",
+      "healthy": "Within the standard healthy adult BMI range",
+      "overweight": "Above the standard healthy adult BMI range",
+      "obesity": "Within the obesity BMI range"
+    },
+    "messages": {
+      "underweight": "A lower BMI can reflect reduced body mass. Consider the full context, including health history and clinician guidance when needed.",
+      "healthy": "This BMI falls inside the standard adult healthy range. BMI is a screening measure, not a full assessment of health.",
+      "overweight": "This BMI is above the standard adult healthy range. BMI is only one screening input and does not diagnose health conditions.",
+      "obesity": "This BMI is in the obesity range. Use the result as a screening prompt and follow up with clinical context when appropriate."
+    },
+    "metrics": {
+      "range": {
+        "label": "Healthy-weight range"
+      },
+      "height": {
+        "label": "Height used"
+      },
+      "weight": {
+        "label": "Weight used"
+      }
+    },
+    "range": {
+      "metric": "{{min}} to {{max}} kg",
+      "imperial": "{{min}} to {{max}} lb"
+    },
+    "measurements": {
+      "metric": {
+        "height": "{{value}} cm",
+        "weight": "{{value}} kg"
+      },
+      "imperial": {
+        "height": "{{feet}} ft {{inches}} in",
+        "weight": "{{value}} lb"
+      }
+    },
+    "disclaimer": {
+      "title": "Adult wellness note",
+      "body": "BMI is intended here as a quick adult wellness screening measure. It does not diagnose body composition, disease, or overall health."
+    }
+  },
+  "details": {
+    "formula": {
+      "title": "How BMI is calculated",
+      "description": "The calculator converts the active inputs to metric values, computes BMI, and derives the healthy-weight range from the same height.",
+      "expression": "BMI = weight (kg) / height (m)^2",
+      "points": {
+        "metric": "Metric and imperial entries resolve to the same metric calculation model.",
+        "range": "Healthy-weight range uses BMI 18.5 to 24.9 for the entered height.",
+        "local": "Measurements stay inside the local Utilivo runtime with no network calls."
+      }
+    },
+    "thresholds": {
+      "title": "Adult category thresholds",
+      "description": "Standard adult BMI thresholds used in this tool.",
+      "items": {
+        "underweight": {
+          "badge": "Underweight",
+          "range": "Below 18.5",
+          "body": "Below the standard healthy adult BMI range."
+        },
+        "healthy": {
+          "badge": "Healthy",
+          "range": "18.5 to 24.9",
+          "body": "Within the standard healthy adult BMI range."
+        },
+        "overweight": {
+          "badge": "Overweight",
+          "range": "25.0 to 29.9",
+          "body": "Above the standard healthy adult BMI range."
+        },
+        "obesity": {
+          "badge": "Obesity",
+          "range": "30.0 and above",
+          "body": "Within the obesity BMI range."
+        }
+      }
+    }
+  },
+  "footer": {
+    "disclaimer": "For adults only. Not for pregnancy, children, or diagnostic use."
+  },
+  "common": {
+    "emptyValue": "--"
+  }
+}

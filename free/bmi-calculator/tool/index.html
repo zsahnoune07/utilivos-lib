@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page bmi-page">
+    <main class="uv-tool-page__content bmi-shell">
+      <header class="uv-card uv-tool-page__header bmi-hero">
+        <h1 class="uv-tool-page__title" data-i18n="page.title"></h1>
+        <p class="uv-tool-page__subtitle bmi-hero__subtitle" data-i18n="page.subtitle"></p>
+      </header>
+
+      <section class="uv-grid">
+        <section
+          class="uv-card uv-section bmi-card bmi-form-card uv-col-8"
+          aria-labelledby="calculator-heading"
+        >
+          <form id="calculatorForm" class="bmi-form" novalidate>
+            <div class="uv-field">
+              <span class="uv-field__label" data-i18n="form.units.label"></span>
+              <div class="uv-tabs bmi-tabs" role="tablist" data-i18n-aria-label="form.units.aria">
+                <button
+                  id="unitMetric"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="metricFields"
+                  data-unit="metric"
+                  data-i18n="form.units.metric"
+                ></button>
+                <button
+                  id="unitImperial"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="imperialFields"
+                  data-unit="imperial"
+                  data-i18n="form.units.imperial"
+                ></button>
+              </div>
+            </div>
+
+            <section
+              id="metricFields"
+              class="bmi-unit-panel"
+              role="tabpanel"
+              aria-labelledby="unitMetric"
+            >
+              <div class="bmi-input-grid">
+                <label for="heightCm" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.heightCm.label"></span>
+                  <div id="heightCmShell" class="bmi-input-shell">
+                    <input
+                      id="heightCm"
+                      class="uv-input bmi-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="100"
+                      max="250"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.heightCm.placeholder"
+                      aria-describedby="heightCmHelp heightCmError"
+                    />
+                    <span class="bmi-input-unit" data-i18n="form.fields.heightCm.unit"></span>
+                  </div>
+                  <span id="heightCmHelp" class="uv-field__help" data-i18n="form.fields.heightCm.help"></span>
+                  <span id="heightCmError" class="bmi-error" aria-live="polite"></span>
+                </label>
+
+                <label for="weightKg" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.weightKg.label"></span>
+                  <div id="weightKgShell" class="bmi-input-shell">
+                    <input
+                      id="weightKg"
+                      class="uv-input bmi-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="20"
+                      max="400"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.weightKg.placeholder"
+                      aria-describedby="weightKgHelp weightKgError"
+                    />
+                    <span class="bmi-input-unit" data-i18n="form.fields.weightKg.unit"></span>
+                  </div>
+                  <span id="weightKgHelp" class="uv-field__help" data-i18n="form.fields.weightKg.help"></span>
+                  <span id="weightKgError" class="bmi-error" aria-live="polite"></span>
+                </label>
+              </div>
+            </section>
+
+            <section
+              id="imperialFields"
+              class="bmi-unit-panel"
+              role="tabpanel"
+              aria-labelledby="unitImperial"
+              hidden
+            >
+              <div class="bmi-input-grid bmi-input-grid--imperial">
+                <label for="heightFt" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.heightFt.label"></span>
+                  <div id="heightFtShell" class="bmi-input-shell">
+                    <input
+                      id="heightFt"
+                      class="uv-input bmi-input"
+                      type="number"
+                      inputmode="numeric"
+                      step="1"
+                      min="0"
+                      max="8"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.heightFt.placeholder"
+                      aria-describedby="heightFtHelp heightFtError"
+                    />
+                    <span class="bmi-input-unit" data-i18n="form.fields.heightFt.unit"></span>
+                  </div>
+                  <span id="heightFtHelp" class="uv-field__help" data-i18n="form.fields.heightFt.help"></span>
+                  <span id="heightFtError" class="bmi-error" aria-live="polite"></span>
+                </label>
+
+                <label for="heightIn" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.heightIn.label"></span>
+                  <div id="heightInShell" class="bmi-input-shell">
+                    <input
+                      id="heightIn"
+                      class="uv-input bmi-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="0"
+                      max="11.9"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.heightIn.placeholder"
+                      aria-describedby="heightInHelp heightInError"
+                    />
+                    <span class="bmi-input-unit" data-i18n="form.fields.heightIn.unit"></span>
+                  </div>
+                  <span id="heightInHelp" class="uv-field__help" data-i18n="form.fields.heightIn.help"></span>
+                  <span id="heightInError" class="bmi-error" aria-live="polite"></span>
+                </label>
+
+                <label for="weightLb" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.weightLb.label"></span>
+                  <div id="weightLbShell" class="bmi-input-shell">
+                    <input
+                      id="weightLb"
+                      class="uv-input bmi-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="44.1"
+                      max="881.9"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.weightLb.placeholder"
+                      aria-describedby="weightLbHelp weightLbError"
+                    />
+                    <span class="bmi-input-unit" data-i18n="form.fields.weightLb.unit"></span>
+                  </div>
+                  <span id="weightLbHelp" class="uv-field__help" data-i18n="form.fields.weightLb.help"></span>
+                  <span id="weightLbError" class="bmi-error" aria-live="polite"></span>
+                </label>
+              </div>
+            </section>
+
+            <p id="formStatus" class="bmi-status" role="status" aria-live="polite"></p>
+
+            <div class="uv-cluster bmi-actions">
+              <button
+                id="reviewButton"
+                class="uv-button"
+                type="submit"
+                disabled
+                data-i18n="form.actions.review"
+              ></button>
+              <button
+                id="resetButton"
+                class="uv-button uv-button--secondary"
+                type="button"
+                data-i18n="form.actions.reset"
+              ></button>
+            </div>
+          </form>
+        </section>
+
+        <section
+          id="resultCard"
+          class="uv-card uv-section bmi-card bmi-result bmi-result--empty uv-col-4"
+          aria-labelledby="result-heading"
+          tabindex="-1"
+        >
+          <div class="bmi-section-head">
+            <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+            <p class="uv-section__description" data-i18n="result.section.description"></p>
+          </div>
+
+          <div class="bmi-result__body" role="status" aria-live="polite" aria-atomic="true">
+            <span id="resultBadge" class="uv-badge uv-badge--info"></span>
+            <p class="bmi-result__score-label" data-i18n="result.score.label"></p>
+            <p id="resultScore" class="bmi-result__score"></p>
+            <p id="resultCategory" class="bmi-result__category"></p>
+            <p id="resultMessage" class="bmi-result__message"></p>
+
+            <dl class="bmi-metric-list">
+              <div class="bmi-metric">
+                <dt data-i18n="result.metrics.range.label"></dt>
+                <dd id="healthyRangeValue"></dd>
+              </div>
+              <div class="bmi-metric">
+                <dt data-i18n="result.metrics.height.label"></dt>
+                <dd id="heightValue"></dd>
+              </div>
+              <div class="bmi-metric">
+                <dt data-i18n="result.metrics.weight.label"></dt>
+                <dd id="weightValue"></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="uv-alert uv-alert--info">
+            <strong data-i18n="result.disclaimer.title"></strong>
+            <p class="bmi-alert-copy" data-i18n="result.disclaimer.body"></p>
+          </div>
+        </section>
+      </section>
+
+      <section class="uv-grid">
+
+        <section class="uv-card uv-section bmi-card uv-col-6" aria-labelledby="thresholds-heading">
+          <h2 id="thresholds-heading" class="uv-section__title" data-i18n="details.thresholds.title"></h2>
+          <p class="uv-section__description" data-i18n="details.thresholds.description"></p>
+
+          <div class="bmi-threshold-list">
+            <article class="bmi-threshold bmi-threshold--underweight">
+              <span class="uv-badge uv-badge--info" data-i18n="details.thresholds.items.underweight.badge"></span>
+              <p class="bmi-threshold__range" data-i18n="details.thresholds.items.underweight.range"></p>
+              <p class="bmi-threshold__body" data-i18n="details.thresholds.items.underweight.body"></p>
+            </article>
+
+            <article class="bmi-threshold bmi-threshold--healthy">
+              <span class="uv-badge uv-badge--success" data-i18n="details.thresholds.items.healthy.badge"></span>
+              <p class="bmi-threshold__range" data-i18n="details.thresholds.items.healthy.range"></p>
+              <p class="bmi-threshold__body" data-i18n="details.thresholds.items.healthy.body"></p>
+            </article>
+
+            <article class="bmi-threshold bmi-threshold--overweight">
+              <span class="uv-badge uv-badge--warning" data-i18n="details.thresholds.items.overweight.badge"></span>
+              <p class="bmi-threshold__range" data-i18n="details.thresholds.items.overweight.range"></p>
+              <p class="bmi-threshold__body" data-i18n="details.thresholds.items.overweight.body"></p>
+            </article>
+
+            <article class="bmi-threshold bmi-threshold--obesity">
+              <span class="uv-badge uv-badge--error" data-i18n="details.thresholds.items.obesity.badge"></span>
+              <p class="bmi-threshold__range" data-i18n="details.thresholds.items.obesity.range"></p>
+              <p class="bmi-threshold__body" data-i18n="details.thresholds.items.obesity.body"></p>
+            </article>
+          </div>
+        </section>
+        
+        <section class="uv-card uv-section bmi-card uv-col-6" aria-labelledby="formula-heading">
+          <h2 id="formula-heading" class="uv-section__title" data-i18n="details.formula.title"></h2>
+          <p class="uv-section__description" data-i18n="details.formula.description"></p>
+          <p class="bmi-formula" data-i18n="details.formula.expression"></p>
+
+          <ul class="bmi-note-list">
+            <li data-i18n="details.formula.points.metric"></li>
+            <li data-i18n="details.formula.points.range"></li>
+            <li data-i18n="details.formula.points.local"></li>
+          </ul>
+        </section>
+
+      </section>
+
+      <footer class="bmi-footer">
+        <p class="bmi-footer__copy" data-i18n="footer.disclaimer"></p>
+      </footer>
+    </main>
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
