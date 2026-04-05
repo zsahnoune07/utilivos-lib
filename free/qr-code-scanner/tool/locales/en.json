@@ -1,0 +1,43 @@
+{
+  "page": {
+    "meta": {
+      "title": "QR Code Scanner"
+    }
+  },
+  "scan": {
+    "section": {
+      "title": "Scan",
+      "description": "Use the camera for a live scan, or choose an existing photo from your library."
+    },
+    "preview": {
+      "aria": "Camera preview"
+    },
+    "start": "Start camera",
+    "stop": "Stop camera",
+    "gallery": "Choose from library",
+    "hint": "Point the camera at a QR code. Decoding runs automatically when a code is found."
+  },
+  "result": {
+    "section": {
+      "title": "Decoded text"
+    },
+    "empty": "Scan a code or pick an image to see the result here.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFailed": "Could not copy. Select the text manually.",
+    "clear": "Clear result"
+  },
+  "errors": {
+    "jsqrMissing": "The QR decoder could not be loaded.",
+    "cameraDenied": "Camera access is needed for live scanning.",
+    "cameraNotFound": "No camera was found on this device.",
+    "cameraFailed": "Could not start the camera.",
+    "decodeFailed": "No QR code found in this image.",
+    "imageReadFailed": "Could not read the image.",
+    "storageDenied": "You have reached the free limit for file actions today, or access was denied.",
+    "noImagePicker": "Choosing a photo is not available in this environment."
+  },
+  "state": {
+    "scanning": "Looking for a QR code…"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page">
+    <main class="uv-tool-page__content">
+      <section class="uv-card uv-section uv-pattern-form">
+        <h2 class="uv-section__title" data-i18n="scan.section.title"></h2>
+        <p class="uv-section__description" data-i18n="scan.section.description"></p>
+
+        <div class="qr-preview-wrap">
+          <video
+            id="video"
+            class="qr-preview__video"
+            playsinline
+            muted
+            aria-hidden="true"
+          ></video>
+          <div id="preview-placeholder" class="qr-preview__placeholder">
+            <p class="uv-section__description" data-i18n="scan.hint"></p>
+          </div>
+        </div>
+
+        <p id="scan-status" class="qr-scan-status uv-text-body-sm uv-text-muted" hidden></p>
+
+        <div class="uv-pattern-form__actions qr-actions">
+          <button id="start-camera" class="uv-button" type="button" data-i18n="scan.start"></button>
+          <button id="stop-camera" class="uv-button uv-button--secondary" type="button" data-i18n="scan.stop" hidden></button>
+          <button id="pick-image" class="uv-button uv-button--secondary" type="button" data-i18n="scan.gallery"></button>
+        </div>
+        <input id="file-input" type="file" accept="image/*" hidden />
+      </section>
+
+      <section class="uv-card uv-section uv-pattern-results">
+        <div class="uv-pattern-results__headline">
+          <h2 class="uv-section__title" data-i18n="result.section.title"></h2>
+        </div>
+        <pre id="result-out" class="uv-result" data-i18n="result.empty"></pre>
+        <div class="uv-pattern-form__actions">
+          <button id="copy-result" class="uv-button uv-button--secondary" type="button" data-i18n="result.copy" disabled></button>
+          <button id="clear-result" class="uv-button uv-button--secondary" type="button" data-i18n="result.clear"></button>
+        </div>
+      </section>
+    </main>
+    <canvas id="canvas" hidden></canvas>
+    <script src="./vendor/jsQR.min.js"></script>
+    <script src="./utilivo/tool.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
