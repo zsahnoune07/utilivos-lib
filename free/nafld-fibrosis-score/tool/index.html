@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./utilivo/patterns.css" />
+    <link rel="stylesheet" href="./utilivo/utilities.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page nfs-page">
+    <header class="nfs-topbar">
+      <div class="nfs-topbar__inner">
+        <div class="nfs-topbar__copy">
+          <h1 class="uv-tool-page__title" data-i18n="page.title"></h1>
+          <p class="uv-tool-page__subtitle" data-i18n="page.subtitle"></p>
+        </div>
+      </div>
+    </header>
+
+    <main class="uv-tool-page__content nfs-shell">
+      <section class="uv-card uv-section nfs-hero" aria-labelledby="overview-heading">
+        <div class="nfs-section-head">
+          <h2 id="overview-heading" class="uv-section__title" data-i18n="overview.title"></h2>
+          <p class="uv-section__description" data-i18n="overview.description"></p>
+        </div>
+
+        <ul class="nfs-overview-list">
+          <li data-i18n="overview.points.formula"></li>
+          <li data-i18n="overview.points.risk"></li>
+          <li data-i18n="overview.points.context"></li>
+        </ul>
+      </section>
+
+      <section class="uv-card uv-section nfs-card" aria-labelledby="inputs-heading">
+        <div class="nfs-section-head">
+          <h2 id="inputs-heading" class="uv-section__title" data-i18n="form.section.title"></h2>
+          <p class="uv-section__description" data-i18n="form.section.description"></p>
+        </div>
+
+        <form id="calculatorForm" class="nfs-form" novalidate>
+          <div class="nfs-grid">
+            <label for="age" class="uv-field nfs-field">
+              <span class="uv-field__label" data-i18n="form.fields.age.label"></span>
+              <div id="ageShell" class="nfs-input-shell">
+                <input
+                  id="age"
+                  name="age"
+                  class="uv-input nfs-input"
+                  type="number"
+                  inputmode="numeric"
+                  step="1"
+                  min="18"
+                  max="120"
+                  autocomplete="off"
+                  data-i18n-placeholder="form.fields.age.placeholder"
+                  aria-describedby="ageHelp ageError"
+                />
+                <span class="nfs-input-unit" data-i18n="form.fields.age.unit"></span>
+              </div>
+              <span id="ageHelp" class="uv-field__help" data-i18n="form.fields.age.help"></span>
+              <span id="ageError" class="nfs-error" aria-live="polite"></span>
+            </label>
+
+            <label for="bmi" class="uv-field nfs-field">
+              <span class="uv-field__label" data-i18n="form.fields.bmi.label"></span>
+              <div id="bmiShell" class="nfs-input-shell">
+                <input
+                  id="bmi"
+                  name="bmi"
+                  class="uv-input nfs-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.1"
+                  min="10"
+                  max="100"
+                  autocomplete="off"
+                  data-i18n-placeholder="form.fields.bmi.placeholder"
+                  aria-describedby="bmiHelp bmiError"
+                />
+                <span class="nfs-input-unit" data-i18n="form.fields.bmi.unit"></span>
+              </div>
+              <span id="bmiHelp" class="uv-field__help" data-i18n="form.fields.bmi.help"></span>
+              <span id="bmiError" class="nfs-error" aria-live="polite"></span>
+            </label>
+
+            <label for="ast" class="uv-field nfs-field">
+              <span class="uv-field__label" data-i18n="form.fields.ast.label"></span>
+              <div id="astShell" class="nfs-input-shell">
+                <input
+                  id="ast"
+                  name="ast"
+                  class="uv-input nfs-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.1"
+                  min="0.1"
+                  max="2000"
+                  autocomplete="off"
+                  data-i18n-placeholder="form.fields.ast.placeholder"
+                  aria-describedby="astHelp astError"
+                />
+                <span class="nfs-input-unit" data-i18n="form.fields.ast.unit"></span>
+              </div>
+              <span id="astHelp" class="uv-field__help" data-i18n="form.fields.ast.help"></span>
+              <span id="astError" class="nfs-error" aria-live="polite"></span>
+            </label>
+
+            <label for="alt" class="uv-field nfs-field">
+              <span class="uv-field__label" data-i18n="form.fields.alt.label"></span>
+              <div id="altShell" class="nfs-input-shell">
+                <input
+                  id="alt"
+                  name="alt"
+                  class="uv-input nfs-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.1"
+                  min="0.1"
+                  max="2000"
+                  autocomplete="off"
+                  data-i18n-placeholder="form.fields.alt.placeholder"
+                  aria-describedby="altHelp altError"
+                />
+                <span class="nfs-input-unit" data-i18n="form.fields.alt.unit"></span>
+              </div>
+              <span id="altHelp" class="uv-field__help" data-i18n="form.fields.alt.help"></span>
+              <span id="altError" class="nfs-error" aria-live="polite"></span>
+            </label>
+
+            <label for="platelets" class="uv-field nfs-field">
+              <span class="uv-field__label" data-i18n="form.fields.platelets.label"></span>
+              <div id="plateletsShell" class="nfs-input-shell">
+                <input
+                  id="platelets"
+                  name="platelets"
+                  class="uv-input nfs-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.1"
+                  min="1"
+                  max="1000"
+                  autocomplete="off"
+                  data-i18n-placeholder="form.fields.platelets.placeholder"
+                  aria-describedby="plateletsHelp plateletsError"
+                />
+                <span class="nfs-input-unit" data-i18n="form.fields.platelets.unit"></span>
+              </div>
+              <span
+                id="plateletsHelp"
+                class="uv-field__help"
+                data-i18n="form.fields.platelets.help"
+              ></span>
+              <span id="plateletsError" class="nfs-error" aria-live="polite"></span>
+            </label>
+
+            <label for="albumin" class="uv-field nfs-field">
+              <span class="uv-field__label" data-i18n="form.fields.albumin.label"></span>
+              <div id="albuminShell" class="nfs-input-shell">
+                <input
+                  id="albumin"
+                  name="albumin"
+                  class="uv-input nfs-input"
+                  type="number"
+                  inputmode="decimal"
+                  step="0.1"
+                  min="0.5"
+                  max="6.5"
+                  autocomplete="off"
+                  data-i18n-placeholder="form.fields.albumin.placeholder"
+                  aria-describedby="albuminHelp albuminError"
+                />
+                <span class="nfs-input-unit" data-i18n="form.fields.albumin.unit"></span>
+              </div>
+              <span
+                id="albuminHelp"
+                class="uv-field__help"
+                data-i18n="form.fields.albumin.help"
+              ></span>
+              <span id="albuminError" class="nfs-error" aria-live="polite"></span>
+            </label>
+
+            <fieldset id="diabetesField" class="uv-field nfs-field nfs-field--full nfs-segment-field">
+              <legend class="uv-field__label" data-i18n="form.fields.diabetes.label"></legend>
+              <span
+                id="diabetesHelp"
+                class="uv-field__help"
+                data-i18n="form.fields.diabetes.help"
+              ></span>
+              <div id="diabetesShell" class="nfs-segment" aria-describedby="diabetesHelp diabetesError">
+                <label class="nfs-segment__option">
+                  <input id="diabetesYes" name="diabetes" type="radio" value="yes" />
+                  <span data-i18n="common.yes"></span>
+                </label>
+                <label class="nfs-segment__option">
+                  <input id="diabetesNo" name="diabetes" type="radio" value="no" />
+                  <span data-i18n="common.no"></span>
+                </label>
+              </div>
+              <span id="diabetesError" class="nfs-error" aria-live="polite"></span>
+            </fieldset>
+          </div>
+
+          <p id="formStatus" class="nfs-status" role="status" aria-live="polite"></p>
+
+          <div class="uv-cluster nfs-actions">
+            <button
+              id="calculateButton"
+              class="uv-button"
+              type="submit"
+              disabled
+              data-i18n="form.actions.calculate"
+            ></button>
+            <button
+              id="resetButton"
+              class="uv-button uv-button--secondary"
+              type="button"
+              data-i18n="form.actions.reset"
+            ></button>
+          </div>
+        </form>
+      </section>
+
+      <section
+        id="resultCard"
+        class="uv-card uv-section nfs-card nfs-result nfs-result--empty"
+        aria-labelledby="result-heading"
+      >
+        <div class="nfs-section-head">
+          <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+          <p class="uv-section__description" data-i18n="result.section.description"></p>
+        </div>
+
+        <div class="nfs-result__body" role="status" aria-live="polite" aria-atomic="true">
+          <span id="resultBadge" class="nfs-result__badge"></span>
+          <p id="resultScore" class="nfs-result__score"></p>
+          <p id="resultCategory" class="nfs-result__category"></p>
+          <p id="resultInterpretation" class="nfs-result__interpretation"></p>
+
+          <dl class="nfs-metrics">
+            <div class="nfs-metric">
+              <dt class="nfs-metric__label" data-i18n="result.metrics.ratio.label"></dt>
+              <dd id="ratioValue" class="nfs-metric__value"></dd>
+            </div>
+            <div class="nfs-metric">
+              <dt class="nfs-metric__label" data-i18n="result.metrics.threshold.label"></dt>
+              <dd id="thresholdValue" class="nfs-metric__value"></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <details class="uv-card nfs-details">
+        <summary class="nfs-details__summary" data-i18n="details.how.title"></summary>
+        <div class="nfs-details__body">
+          <p class="uv-section__description" data-i18n="details.how.description"></p>
+          <p class="nfs-formula" data-i18n="details.how.formula"></p>
+          <dl class="nfs-definition-list">
+            <div class="nfs-definition">
+              <dt data-i18n="details.how.variables.age.label"></dt>
+              <dd data-i18n="details.how.variables.age.value"></dd>
+            </div>
+            <div class="nfs-definition">
+              <dt data-i18n="details.how.variables.bmi.label"></dt>
+              <dd data-i18n="details.how.variables.bmi.value"></dd>
+            </div>
+            <div class="nfs-definition">
+              <dt data-i18n="details.how.variables.diabetes.label"></dt>
+              <dd data-i18n="details.how.variables.diabetes.value"></dd>
+            </div>
+            <div class="nfs-definition">
+              <dt data-i18n="details.how.variables.ratio.label"></dt>
+              <dd data-i18n="details.how.variables.ratio.value"></dd>
+            </div>
+            <div class="nfs-definition">
+              <dt data-i18n="details.how.variables.platelets.label"></dt>
+              <dd data-i18n="details.how.variables.platelets.value"></dd>
+            </div>
+            <div class="nfs-definition">
+              <dt data-i18n="details.how.variables.albumin.label"></dt>
+              <dd data-i18n="details.how.variables.albumin.value"></dd>
+            </div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="uv-card nfs-details">
+        <summary class="nfs-details__summary" data-i18n="details.notes.title"></summary>
+        <div class="nfs-details__body">
+          <ul class="nfs-note-list">
+            <li data-i18n="details.notes.items.stratification"></li>
+            <li data-i18n="details.notes.items.context"></li>
+            <li data-i18n="details.notes.items.diagnosis"></li>
+          </ul>
+        </div>
+      </details>
+
+      <section class="uv-card uv-section nfs-card" aria-labelledby="references-heading">
+        <div class="nfs-section-head">
+          <h2
+            id="references-heading"
+            class="uv-section__title"
+            data-i18n="references.section.title"
+          ></h2>
+          <p class="uv-section__description" data-i18n="references.section.description"></p>
+        </div>
+
+        <ul class="nfs-reference-list">
+          <li data-i18n="references.items.angulo"></li>
+          <li data-i18n="references.items.mdcalc"></li>
+          <li data-i18n="references.items.placeholder"></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="nfs-footer">
+      <p class="nfs-footer__copy" data-i18n="footer.disclaimer"></p>
+    </footer>
+
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

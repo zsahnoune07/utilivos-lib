@@ -1,0 +1,216 @@
+{
+  "page": {
+    "meta": {
+      "title": "NAFLD Fibrosis Score"
+    },
+    "eyebrow": "Clinical decision support",
+    "title": "NAFLD Fibrosis Score",
+    "subtitle": "Estimate advanced fibrosis risk in NAFLD using the standard published equation and local-only calculation."
+  },
+  "overview": {
+    "title": "What this tool does",
+    "description": "This calculator reproduces the standard NAFLD Fibrosis Score workflow for clinical reference inside the Utilivo WebView runtime.",
+    "badges": {
+      "label": "Tool highlights",
+      "offline": "Works fully offline",
+      "local": "Local-only persistence",
+      "support": "Decision-support calculator"
+    },
+    "points": {
+      "formula": "Calculates the NAFLD Fibrosis Score and AST/ALT ratio automatically.",
+      "risk": "Classifies results into low likelihood, indeterminate probability, or high likelihood of advanced fibrosis.",
+      "context": "Use the output alongside clinical context, not as a standalone diagnosis."
+    }
+  },
+  "form": {
+    "section": {
+      "title": "Inputs",
+      "description": "Enter all required values. The score recalculates live once the form is valid."
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "reset": "Reset"
+    },
+    "fields": {
+      "age": {
+        "label": "Age",
+        "unit": "years",
+        "placeholder": "52",
+        "help": "Adults only. Whole years.",
+        "errors": {
+          "required": "Enter age in whole years.",
+          "number": "Age must be a number.",
+          "integer": "Age must be a whole number.",
+          "range": "Age must be between 18 and 120 years."
+        }
+      },
+      "bmi": {
+        "label": "BMI",
+        "unit": "kg/m2",
+        "placeholder": "32.4",
+        "help": "Body mass index.",
+        "errors": {
+          "required": "Enter BMI.",
+          "number": "BMI must be a number.",
+          "range": "BMI must be between 10 and 100 kg/m2."
+        }
+      },
+      "diabetes": {
+        "label": "Impaired fasting glucose or diabetes",
+        "help": "Select yes if either impaired fasting glucose or diabetes is present.",
+        "errors": {
+          "required": "Select yes or no."
+        }
+      },
+      "ast": {
+        "label": "AST",
+        "unit": "U/L",
+        "placeholder": "68",
+        "help": "Aspartate aminotransferase.",
+        "errors": {
+          "required": "Enter AST.",
+          "number": "AST must be a number.",
+          "range": "AST must be between 0.1 and 2000 U/L."
+        }
+      },
+      "alt": {
+        "label": "ALT",
+        "unit": "U/L",
+        "placeholder": "42",
+        "help": "Alanine aminotransferase. Must be greater than zero.",
+        "errors": {
+          "required": "Enter ALT.",
+          "number": "ALT must be a number.",
+          "nonzero": "ALT must be greater than zero.",
+          "range": "ALT must be between 0.1 and 2000 U/L."
+        }
+      },
+      "platelets": {
+        "label": "Platelet count",
+        "unit": "x10^9/L",
+        "placeholder": "185",
+        "help": "Enter the platelet count in x10^9/L.",
+        "errors": {
+          "required": "Enter the platelet count.",
+          "number": "Platelet count must be a number.",
+          "range": "Platelet count must be between 1 and 1000 x10^9/L."
+        }
+      },
+      "albumin": {
+        "label": "Albumin",
+        "unit": "g/dL",
+        "placeholder": "3.8",
+        "help": "Serum albumin concentration.",
+        "errors": {
+          "required": "Enter albumin.",
+          "number": "Albumin must be a number.",
+          "range": "Albumin must be between 0.5 and 6.5 g/dL."
+        }
+      }
+    }
+  },
+  "result": {
+    "section": {
+      "title": "Result",
+      "description": "Rounded to three decimals with the standard NAFLD Fibrosis Score threshold interpretation."
+    },
+    "badges": {
+      "waiting": "Awaiting valid inputs",
+      "low": "Low-risk range",
+      "indeterminate": "Indeterminate range",
+      "high": "High-risk range"
+    },
+    "empty": {
+      "category": "Score not available yet",
+      "body": "Complete the form with valid values to calculate the NAFLD Fibrosis Score."
+    },
+    "categories": {
+      "low": "Low likelihood of advanced fibrosis",
+      "indeterminate": "Indeterminate probability of advanced fibrosis",
+      "high": "High likelihood of advanced fibrosis"
+    },
+    "interpretations": {
+      "low": "The score falls below the lower threshold. This supports a lower likelihood of advanced fibrosis, but interpretation still depends on the full clinical picture.",
+      "indeterminate": "The score falls within the indeterminate zone. Correlate with the broader clinical assessment and consider additional evaluation when appropriate.",
+      "high": "The score exceeds the upper threshold. This supports a higher likelihood of advanced fibrosis and should be interpreted alongside the rest of the patient assessment."
+    },
+    "thresholds": {
+      "low": "Score < -1.455",
+      "indeterminate": "Score -1.455 to 0.676",
+      "high": "Score > 0.676"
+    },
+    "metrics": {
+      "ratio": {
+        "label": "AST/ALT ratio"
+      },
+      "threshold": {
+        "label": "Threshold band"
+      }
+    }
+  },
+  "status": {
+    "empty": "Enter all required values to calculate.",
+    "incomplete": "Complete or correct the highlighted fields to enable calculation.",
+    "ready": "All required fields are valid. The result is updating live."
+  },
+  "details": {
+    "how": {
+      "title": "How it works",
+      "description": "The score combines age, BMI, impaired fasting glucose or diabetes status, AST/ALT ratio, platelet count, and albumin.",
+      "formula": "NFS = -1.675 + (0.037 x age) + (0.094 x BMI) + (1.13 x impaired fasting glucose or diabetes) + (0.99 x AST/ALT ratio) - (0.013 x platelet count) - (0.66 x albumin)",
+      "variables": {
+        "age": {
+          "label": "Age",
+          "value": "Age in years."
+        },
+        "bmi": {
+          "label": "BMI",
+          "value": "Body mass index in kg/m2."
+        },
+        "diabetes": {
+          "label": "Impaired fasting glucose or diabetes",
+          "value": "Use 1 for yes and 0 for no."
+        },
+        "ratio": {
+          "label": "AST/ALT ratio",
+          "value": "AST divided by ALT. The tool blocks ALT zero values."
+        },
+        "platelets": {
+          "label": "Platelet count",
+          "value": "Platelet count in x10^9/L."
+        },
+        "albumin": {
+          "label": "Albumin",
+          "value": "Albumin in g/dL."
+        }
+      }
+    },
+    "notes": {
+      "title": "Clinical notes",
+      "items": {
+        "stratification": "This tool supports fibrosis risk stratification in NAFLD.",
+        "context": "Interpret the score in clinical context with the rest of the history, examination, and supporting data.",
+        "diagnosis": "This calculator is not a standalone diagnosis."
+      }
+    }
+  },
+  "references": {
+    "section": {
+      "title": "References",
+      "description": "Local static references for maintenance review."
+    },
+    "items": {
+      "angulo": "Angulo P, Hui JM, Marchesini G, et al. The NAFLD Fibrosis Score: A noninvasive system that identifies liver fibrosis in patients with NAFLD. Hepatology. 2007;45(4):846-854.",
+      "mdcalc": "MDCalc. NAFLD / Non-Alcoholic Fatty Liver Disease Fibrosis Score. Calculator logic reviewed for parity during implementation.",
+      "placeholder": "Review threshold wording and citations during future medical-content updates."
+    }
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "emptyValue": "--"
+  },
+  "footer": {
+    "disclaimer": "For clinical decision support only. Not a diagnosis. Use alongside professional judgment."
+  }
+}
