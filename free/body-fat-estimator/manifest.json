@@ -1,0 +1,40 @@
+{
+  "id": "com.utilivo.plugin.body-fat-estimator",
+  "name": "Body Fat Estimator",
+  "slug": "body-fat-estimator",
+  "version": "1.0.0",
+  "description": "Estimate body fat percentage from neck, height, and waist or abdomen measurements using the U.S. Navy tape method. Metric or imperial input, optional storage. Educational only—not medical advice.",
+  "author": "Utilivo",
+  "entry": "tool/index.html",
+  "icon": "tool/assets/icon.png",
+  "thumb": "tool/assets/thumb.png",
+  "category": "health",
+  "tags": [
+    "body-fat",
+    "navy",
+    "tape-measure",
+    "circumference",
+    "calculator",
+    "health",
+    "fitness",
+    "composition"
+  ],
+  "tier": "free",
+  "permissions": [
+    "storage"
+  ],
+  "ui_type": "page",
+  "api_version": "1",
+  "screenshots": [
+    "tool/assets/screenshots/home.png"
+  ],
+  "min_app_version": "1.0.0",
+  "locales": [
+    "en"
+  ],
+  "default_locale": "en",
+  "manifest_schema_version": 1,
+  "design_system_version": 1,
+  "supports_dark_mode": true,
+  "runtime_mode": "bundled"
+}

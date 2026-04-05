@@ -1,0 +1,237 @@
+{
+  "page": {
+    "meta": {
+      "title": "Body Fat Estimator"
+    }
+  },
+  "common": {
+    "emptyValue": "—"
+  },
+  "form": {
+    "section": {
+      "title": "Measurements",
+      "description": "Enter tape measurements using the U.S. Navy circumference method. Results are approximate population-level estimates, not a medical diagnosis."
+    },
+    "units": {
+      "label": "Units",
+      "aria": "Unit system",
+      "metric": "Metric",
+      "imperial": "Imperial"
+    },
+    "sex": {
+      "label": "Sex (for formula)",
+      "aria": "Sex selection",
+      "male": "Male",
+      "female": "Female"
+    },
+    "fields": {
+      "heightCm": {
+        "label": "Height",
+        "placeholder": "e.g. 175",
+        "unit": "cm",
+        "help": "Standing height, no shoes.",
+        "errors": {
+          "required": "Enter height.",
+          "number": "Use a number.",
+          "range": "Height should be between 100 and 250 cm."
+        }
+      },
+      "heightImperial": {
+        "label": "Height",
+        "help": "Feet and inches, standing without shoes."
+      },
+      "heightFt": {
+        "placeholder": "Ft",
+        "unit": "ft",
+        "errors": {
+          "required": "Enter feet.",
+          "number": "Use a number.",
+          "integer": "Use a whole number for feet.",
+          "range": "Feet look unrealistic.",
+          "combinedRange": "Combined height should be between about 3 ft 4 in and 8 ft 2 in."
+        }
+      },
+      "heightIn": {
+        "placeholder": "In",
+        "unit": "in",
+        "errors": {
+          "required": "Enter inches.",
+          "number": "Use a number.",
+          "range": "Inches should be between 0 and 11.9.",
+          "combinedRange": "Combined height should be between about 3 ft 4 in and 8 ft 2 in."
+        }
+      },
+      "neckCm": {
+        "label": "Neck",
+        "placeholder": "e.g. 38",
+        "unit": "cm",
+        "help": "Narrowest circumference below the larynx (Adam's apple), tape horizontal.",
+        "errors": {
+          "required": "Enter neck circumference.",
+          "number": "Use a number.",
+          "range": "Neck should be between 25 and 55 cm."
+        }
+      },
+      "neckIn": {
+        "label": "Neck",
+        "placeholder": "e.g. 15",
+        "unit": "in",
+        "help": "Narrowest point below the larynx, tape horizontal.",
+        "errors": {
+          "required": "Enter neck circumference.",
+          "number": "Use a number.",
+          "range": "Neck should be between 10 and 22 in."
+        }
+      },
+      "abdomenCm": {
+        "label": "Abdomen (at navel)",
+        "placeholder": "e.g. 90",
+        "unit": "cm",
+        "help": "Horizontal tape at the navel, relaxed (do not suck in).",
+        "errors": {
+          "required": "Enter abdomen circumference.",
+          "number": "Use a number.",
+          "range": "Abdomen should be between 55 and 200 cm."
+        }
+      },
+      "abdomenIn": {
+        "label": "Abdomen (at navel)",
+        "placeholder": "e.g. 35",
+        "unit": "in",
+        "help": "At the navel, relaxed.",
+        "errors": {
+          "required": "Enter abdomen circumference.",
+          "number": "Use a number.",
+          "range": "Abdomen should be between 22 and 79 in."
+        }
+      },
+      "waistCm": {
+        "label": "Waist (narrowest)",
+        "placeholder": "e.g. 70",
+        "unit": "cm",
+        "help": "Narrowest horizontal circumference, usually near the natural waist.",
+        "errors": {
+          "required": "Enter waist circumference.",
+          "number": "Use a number.",
+          "range": "Waist should be between 50 and 180 cm."
+        }
+      },
+      "waistIn": {
+        "label": "Waist (narrowest)",
+        "placeholder": "e.g. 28",
+        "unit": "in",
+        "help": "Narrowest point, tape horizontal.",
+        "errors": {
+          "required": "Enter waist circumference.",
+          "number": "Use a number.",
+          "range": "Waist should be between 20 and 71 in."
+        }
+      },
+      "hipCm": {
+        "label": "Hip (widest)",
+        "placeholder": "e.g. 98",
+        "unit": "cm",
+        "help": "Widest horizontal circumference around hips/buttocks.",
+        "errors": {
+          "required": "Enter hip circumference.",
+          "number": "Use a number.",
+          "range": "Hip should be between 60 and 220 cm."
+        }
+      },
+      "hipIn": {
+        "label": "Hip (widest)",
+        "placeholder": "e.g. 38",
+        "unit": "in",
+        "help": "Widest part of hips/buttocks.",
+        "errors": {
+          "required": "Enter hip circumference.",
+          "number": "Use a number.",
+          "range": "Hip should be between 24 and 87 in."
+        }
+      }
+    },
+    "errors": {
+      "geometry": {
+        "abdomenNeck": "Abdomen must be greater than neck for this formula.",
+        "waistHipNeck": "Waist plus hip must be greater than neck."
+      },
+      "unrealisticResult": "Those measurements produce an unrealistic body fat estimate. Double-check tape placement and values."
+    },
+    "actions": {
+      "calculate": "Estimate",
+      "reset": "Reset"
+    }
+  },
+  "status": {
+    "empty": "Fill in the fields to see an estimate.",
+    "ready": {
+      "metric": "Ready to estimate (metric).",
+      "imperial": "Ready to estimate (imperial)."
+    },
+    "incomplete": "Complete the highlighted fields to continue."
+  },
+  "result": {
+    "section": {
+      "title": "Estimate",
+      "description": "Body fat percentage from the Navy tape method. Categories are rough fitness-reference bands, not clinical cutoffs."
+    },
+    "summary": {
+      "label": "Estimated body fat"
+    },
+    "percentValue": "{{value}}%",
+    "badges": {
+      "waiting": "Waiting for input",
+      "checkInputs": "Check measurements",
+      "essential": "Essential range",
+      "athletic": "Athletic range",
+      "fitness": "Fitness range",
+      "average": "Average range",
+      "obese": "Higher range"
+    },
+    "empty": {
+      "category": "No estimate yet",
+      "body": "Enter valid measurements and tap Estimate."
+    },
+    "categories": {
+      "essentialMale": "Very lean (male reference band)",
+      "athleticMale": "Athletic (male reference band)",
+      "fitnessMale": "Fitness (male reference band)",
+      "averageMale": "Average (male reference band)",
+      "obeseMale": "Above typical fitness range (male reference band)",
+      "essentialFemale": "Essential / very lean (female reference band)",
+      "athleticFemale": "Athletic (female reference band)",
+      "fitnessFemale": "Fitness (female reference band)",
+      "averageFemale": "Average (female reference band)",
+      "obeseFemale": "Above typical fitness range (female reference band)"
+    },
+    "messages": {
+      "essentialMale": "Roughly in the essential-to-very-lean band often cited for men; individual health varies.",
+      "athleticMale": "Roughly in the athletic band often cited for men.",
+      "fitnessMale": "Roughly in the fitness band often cited for men.",
+      "averageMale": "Roughly in the average band often cited for men.",
+      "obeseMale": "Roughly above the average band often cited for men; this is not a diagnosis.",
+      "essentialFemale": "Roughly in the essential band often cited for women.",
+      "athleticFemale": "Roughly in the athletic band often cited for women.",
+      "fitnessFemale": "Roughly in the fitness band often cited for women.",
+      "averageFemale": "Roughly in the average band often cited for women.",
+      "obeseFemale": "Roughly above the average band often cited for women; this is not a diagnosis."
+    },
+    "disclaimer": {
+      "title": "Educational use",
+      "body": "This tool uses a published circumference formula for approximation only. It is not medical advice and may differ from lab or clinical methods."
+    }
+  },
+  "method": {
+    "title": "How measurements work",
+    "description": "Follow the same landmarks the Navy method specifies so the estimate stays comparable to reference tables.",
+    "points": {
+      "male": "Men: neck (narrowest below the larynx), abdomen horizontal at the navel (relaxed), and standing height.",
+      "female": "Women: neck, narrowest waist, widest hip/buttock circumference, and standing height.",
+      "navy": "The calculation is the standard logarithmic U.S. Navy body fat estimation from those circumferences (measurements converted to inches internally).",
+      "categories": "Category labels are simplified reference bands from common fitness charts; they are not enlistment or medical standards."
+    }
+  },
+  "footer": {
+    "disclaimer": "For education only. If you have health concerns, speak with a qualified professional."
+  }
+}

@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivo/base.css" />
+    <link rel="stylesheet" href="./utilivo/layout.css" />
+    <link rel="stylesheet" href="./utilivo/components.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page bfe-page">
+    <main class="uv-tool-page__content bfe-shell">
+      <div class="uv-grid">
+        <section
+          class="uv-card uv-section bfe-form-card uv-col-8"
+          aria-labelledby="calculator-heading"
+        >
+          <h2 id="calculator-heading" class="uv-section__title" data-i18n="form.section.title"></h2>
+          <p class="uv-section__description" data-i18n="form.section.description"></p>
+
+          <form id="calculatorForm" class="bfe-form" novalidate>
+            <div class="uv-field">
+              <span class="uv-field__label" data-i18n="form.units.label"></span>
+              <div class="bfe-tabs uv-tabs" role="tablist" data-i18n-aria-label="form.units.aria">
+                <button
+                  id="unitMetric"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="metricFields"
+                  data-unit="metric"
+                  data-i18n="form.units.metric"
+                ></button>
+                <button
+                  id="unitImperial"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="imperialFields"
+                  data-unit="imperial"
+                  data-i18n="form.units.imperial"
+                ></button>
+              </div>
+            </div>
+
+            <div class="uv-field">
+              <span class="uv-field__label" data-i18n="form.sex.label"></span>
+              <div class="bfe-tabs uv-tabs" role="tablist" data-i18n-aria-label="form.sex.aria">
+                <button
+                  id="sexMale"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="maleFieldsAnchor"
+                  data-sex="male"
+                  data-i18n="form.sex.male"
+                ></button>
+                <button
+                  id="sexFemale"
+                  class="uv-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="femaleFieldsAnchor"
+                  data-sex="female"
+                  data-i18n="form.sex.female"
+                ></button>
+              </div>
+            </div>
+
+            <section
+              id="metricFields"
+              class="bfe-unit-panel"
+              role="tabpanel"
+              aria-labelledby="unitMetric"
+            >
+              <div class="bfe-input-grid">
+                <label for="heightCm" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.heightCm.label"></span>
+                  <div id="heightCmShell" class="bfe-input-shell">
+                    <input
+                      id="heightCm"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="100"
+                      max="250"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.heightCm.placeholder"
+                      aria-describedby="heightCmHelp heightCmError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.heightCm.unit"></span>
+                  </div>
+                  <span id="heightCmHelp" class="uv-field__help" data-i18n="form.fields.heightCm.help"></span>
+                  <span id="heightCmError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="neckCm" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.neckCm.label"></span>
+                  <div id="neckCmShell" class="bfe-input-shell">
+                    <input
+                      id="neckCm"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="25"
+                      max="55"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.neckCm.placeholder"
+                      aria-describedby="neckCmHelp neckCmError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.neckCm.unit"></span>
+                  </div>
+                  <span id="neckCmHelp" class="uv-field__help" data-i18n="form.fields.neckCm.help"></span>
+                  <span id="neckCmError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="abdomenCm" class="uv-field" id="maleMetricAbdomen">
+                  <span class="uv-field__label" data-i18n="form.fields.abdomenCm.label"></span>
+                  <div id="abdomenCmShell" class="bfe-input-shell">
+                    <input
+                      id="abdomenCm"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="55"
+                      max="200"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.abdomenCm.placeholder"
+                      aria-describedby="abdomenCmHelp abdomenCmError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.abdomenCm.unit"></span>
+                  </div>
+                  <span id="abdomenCmHelp" class="uv-field__help" data-i18n="form.fields.abdomenCm.help"></span>
+                  <span id="abdomenCmError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="waistCm" class="uv-field" id="femaleMetricWaist" hidden>
+                  <span class="uv-field__label" data-i18n="form.fields.waistCm.label"></span>
+                  <div id="waistCmShell" class="bfe-input-shell">
+                    <input
+                      id="waistCm"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="50"
+                      max="180"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.waistCm.placeholder"
+                      aria-describedby="waistCmHelp waistCmError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.waistCm.unit"></span>
+                  </div>
+                  <span id="waistCmHelp" class="uv-field__help" data-i18n="form.fields.waistCm.help"></span>
+                  <span id="waistCmError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="hipCm" class="uv-field" id="femaleMetricHip" hidden>
+                  <span class="uv-field__label" data-i18n="form.fields.hipCm.label"></span>
+                  <div id="hipCmShell" class="bfe-input-shell">
+                    <input
+                      id="hipCm"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="60"
+                      max="220"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.hipCm.placeholder"
+                      aria-describedby="hipCmHelp hipCmError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.hipCm.unit"></span>
+                  </div>
+                  <span id="hipCmHelp" class="uv-field__help" data-i18n="form.fields.hipCm.help"></span>
+                  <span id="hipCmError" class="bfe-error" aria-live="polite"></span>
+                </label>
+              </div>
+            </section>
+
+            <section
+              id="imperialFields"
+              class="bfe-unit-panel"
+              role="tabpanel"
+              aria-labelledby="unitImperial"
+              hidden
+            >
+              <div class="bfe-input-grid">
+                <div class="uv-field bfe-height-imperial">
+                  <span class="uv-field__label" data-i18n="form.fields.heightImperial.label"></span>
+                  <div class="bfe-height-row">
+                    <div id="heightFtShell" class="bfe-input-shell">
+                      <input
+                        id="heightFt"
+                        class="uv-input bfe-input"
+                        type="number"
+                        inputmode="numeric"
+                        step="1"
+                        min="0"
+                        max="8"
+                        autocomplete="off"
+                        data-i18n-placeholder="form.fields.heightFt.placeholder"
+                        aria-describedby="heightImperialHelp heightFtError"
+                      />
+                      <span class="bfe-input-unit" data-i18n="form.fields.heightFt.unit"></span>
+                    </div>
+                    <div id="heightInShell" class="bfe-input-shell">
+                      <input
+                        id="heightIn"
+                        class="uv-input bfe-input"
+                        type="number"
+                        inputmode="decimal"
+                        step="0.1"
+                        min="0"
+                        max="11.9"
+                        autocomplete="off"
+                        data-i18n-placeholder="form.fields.heightIn.placeholder"
+                        aria-describedby="heightImperialHelp heightInError"
+                      />
+                      <span class="bfe-input-unit" data-i18n="form.fields.heightIn.unit"></span>
+                    </div>
+                  </div>
+                  <span id="heightImperialHelp" class="uv-field__help" data-i18n="form.fields.heightImperial.help"></span>
+                  <span id="heightFtError" class="bfe-error" aria-live="polite"></span>
+                  <span id="heightInError" class="bfe-error" aria-live="polite"></span>
+                </div>
+
+                <label for="neckIn" class="uv-field">
+                  <span class="uv-field__label" data-i18n="form.fields.neckIn.label"></span>
+                  <div id="neckInShell" class="bfe-input-shell">
+                    <input
+                      id="neckIn"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="10"
+                      max="22"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.neckIn.placeholder"
+                      aria-describedby="neckInHelp neckInError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.neckIn.unit"></span>
+                  </div>
+                  <span id="neckInHelp" class="uv-field__help" data-i18n="form.fields.neckIn.help"></span>
+                  <span id="neckInError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="abdomenIn" class="uv-field" id="maleImperialAbdomen">
+                  <span class="uv-field__label" data-i18n="form.fields.abdomenIn.label"></span>
+                  <div id="abdomenInShell" class="bfe-input-shell">
+                    <input
+                      id="abdomenIn"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="22"
+                      max="79"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.abdomenIn.placeholder"
+                      aria-describedby="abdomenInHelp abdomenInError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.abdomenIn.unit"></span>
+                  </div>
+                  <span id="abdomenInHelp" class="uv-field__help" data-i18n="form.fields.abdomenIn.help"></span>
+                  <span id="abdomenInError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="waistIn" class="uv-field" id="femaleImperialWaist" hidden>
+                  <span class="uv-field__label" data-i18n="form.fields.waistIn.label"></span>
+                  <div id="waistInShell" class="bfe-input-shell">
+                    <input
+                      id="waistIn"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="20"
+                      max="71"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.waistIn.placeholder"
+                      aria-describedby="waistInHelp waistInError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.waistIn.unit"></span>
+                  </div>
+                  <span id="waistInHelp" class="uv-field__help" data-i18n="form.fields.waistIn.help"></span>
+                  <span id="waistInError" class="bfe-error" aria-live="polite"></span>
+                </label>
+
+                <label for="hipIn" class="uv-field" id="femaleImperialHip" hidden>
+                  <span class="uv-field__label" data-i18n="form.fields.hipIn.label"></span>
+                  <div id="hipInShell" class="bfe-input-shell">
+                    <input
+                      id="hipIn"
+                      class="uv-input bfe-input"
+                      type="number"
+                      inputmode="decimal"
+                      step="0.1"
+                      min="24"
+                      max="87"
+                      autocomplete="off"
+                      data-i18n-placeholder="form.fields.hipIn.placeholder"
+                      aria-describedby="hipInHelp hipInError"
+                    />
+                    <span class="bfe-input-unit" data-i18n="form.fields.hipIn.unit"></span>
+                  </div>
+                  <span id="hipInHelp" class="uv-field__help" data-i18n="form.fields.hipIn.help"></span>
+                  <span id="hipInError" class="bfe-error" aria-live="polite"></span>
+                </label>
+              </div>
+            </section>
+
+            <span id="maleFieldsAnchor" class="bfe-sr-only" hidden></span>
+            <span id="femaleFieldsAnchor" class="bfe-sr-only" hidden></span>
+
+            <p id="formStatus" class="bfe-status" role="status" aria-live="polite"></p>
+
+            <div class="uv-cluster bfe-actions">
+              <button
+                id="calculateButton"
+                class="uv-button"
+                type="submit"
+                disabled
+                data-i18n="form.actions.calculate"
+              ></button>
+              <button
+                id="resetButton"
+                class="uv-button uv-button--secondary"
+                type="button"
+                data-i18n="form.actions.reset"
+              ></button>
+            </div>
+          </form>
+        </section>
+
+        <section
+          id="resultCard"
+          class="uv-card uv-section bfe-result bfe-result--empty uv-col-4"
+          aria-labelledby="result-heading"
+          tabindex="-1"
+        >
+          <div class="bfe-section-head">
+            <h2 id="result-heading" class="uv-section__title" data-i18n="result.section.title"></h2>
+            <p class="uv-section__description" data-i18n="result.section.description"></p>
+          </div>
+
+          <div class="bfe-result__body" role="status" aria-live="polite" aria-atomic="true">
+            <span id="resultBadge" class="uv-badge uv-badge--info"></span>
+            <p class="bfe-result__label" data-i18n="result.summary.label"></p>
+            <p id="resultPercent" class="bfe-result__value"></p>
+            <p id="resultCategory" class="bfe-result__category"></p>
+            <p id="resultMessage" class="bfe-result__message"></p>
+            <p id="resultFormulaError" class="bfe-result__message bfe-result__message--error" hidden></p>
+          </div>
+
+          <div class="uv-alert uv-alert--info bfe-disclaimer">
+            <strong data-i18n="result.disclaimer.title"></strong>
+            <p data-i18n="result.disclaimer.body"></p>
+          </div>
+        </section>
+      </div>
+
+      <section class="uv-card uv-section bfe-method" aria-labelledby="method-heading">
+        <h2 id="method-heading" class="uv-section__title" data-i18n="method.title"></h2>
+        <p class="uv-section__description" data-i18n="method.description"></p>
+        <ul class="bfe-method-list">
+          <li data-i18n="method.points.male"></li>
+          <li data-i18n="method.points.female"></li>
+          <li data-i18n="method.points.navy"></li>
+          <li data-i18n="method.points.categories"></li>
+        </ul>
+      </section>
+
+      <footer class="bfe-footer">
+        <p class="bfe-footer__copy" data-i18n="footer.disclaimer"></p>
+      </footer>
+    </main>
+    <script src="./utilivo/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
