@@ -1,0 +1,169 @@
+{
+  "page": {
+    "meta": {
+      "title": "FIB-4 Index"
+    },
+    "title": "FIB-4 Index",
+    "subtitle": "Non-invasive liver fibrosis estimate from age, AST, ALT, and platelet count. Local-only calculation."
+  },
+  "overview": {
+    "title": "What this tool does",
+    "description": "Computes the Fibrosis-4 (FIB-4) index for clinical reference inside the Utilivo WebView runtime.",
+    "points": {
+      "formula": "Uses the standard FIB-4 equation with age, AST, ALT, and platelets.",
+      "risk": "Classifies into low, indeterminate, or high probability bands using common published cutoffs (1.45 and 3.25).",
+      "context": "Interpret with full clinical context; not a standalone diagnosis."
+    }
+  },
+  "form": {
+    "section": {
+      "title": "Inputs",
+      "description": "Enter all required values. The index updates live once the form is valid."
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "reset": "Reset"
+    },
+    "fields": {
+      "age": {
+        "label": "Age",
+        "unit": "years",
+        "placeholder": "52",
+        "help": "Age in whole years.",
+        "errors": {
+          "required": "Enter age in whole years.",
+          "number": "Age must be a number.",
+          "integer": "Age must be a whole number.",
+          "range": "Age must be between 18 and 120 years."
+        }
+      },
+      "ast": {
+        "label": "AST",
+        "unit": "U/L",
+        "placeholder": "68",
+        "help": "Aspartate aminotransferase.",
+        "errors": {
+          "required": "Enter AST.",
+          "number": "AST must be a number.",
+          "range": "AST must be between 0.1 and 2000 U/L."
+        }
+      },
+      "alt": {
+        "label": "ALT",
+        "unit": "U/L",
+        "placeholder": "42",
+        "help": "Alanine aminotransferase. Must be greater than zero (used under the square root).",
+        "errors": {
+          "required": "Enter ALT.",
+          "number": "ALT must be a number.",
+          "nonzero": "ALT must be greater than zero.",
+          "range": "ALT must be between 0.1 and 2000 U/L."
+        }
+      },
+      "platelets": {
+        "label": "Platelet count",
+        "unit": "x10^9/L",
+        "placeholder": "185",
+        "help": "Platelet count in x10^9/L.",
+        "errors": {
+          "required": "Enter the platelet count.",
+          "number": "Platelet count must be a number.",
+          "range": "Platelet count must be between 1 and 1000 x10^9/L."
+        }
+      }
+    }
+  },
+  "result": {
+    "section": {
+      "title": "Result",
+      "description": "Rounded to three decimals with standard low / indeterminate / high cutoff interpretation."
+    },
+    "badges": {
+      "waiting": "Awaiting valid inputs",
+      "low": "Low-risk range",
+      "indeterminate": "Indeterminate range",
+      "high": "High-risk range"
+    },
+    "empty": {
+      "category": "Index not available yet",
+      "body": "Complete the form with valid values to calculate FIB-4."
+    },
+    "categories": {
+      "low": "Low probability of advanced fibrosis (by FIB-4)",
+      "indeterminate": "Indeterminate probability of advanced fibrosis",
+      "high": "High probability of advanced fibrosis (by FIB-4)"
+    },
+    "interpretations": {
+      "low": "FIB-4 is below the lower cutoff. This supports a lower likelihood of advanced fibrosis in many cohorts; correlate with the full clinical picture.",
+      "indeterminate": "FIB-4 falls between the published cutoffs. Use clinical judgment and consider further evaluation when appropriate.",
+      "high": "FIB-4 exceeds the upper cutoff. This supports a higher likelihood of advanced fibrosis in many cohorts; interpret alongside the rest of the assessment."
+    },
+    "thresholds": {
+      "low": "FIB-4 < 1.45",
+      "indeterminate": "FIB-4 1.45 to 3.25",
+      "high": "FIB-4 > 3.25"
+    },
+    "metrics": {
+      "sqrtAlt": {
+        "label": "Square root of ALT"
+      },
+      "threshold": {
+        "label": "Threshold band"
+      }
+    }
+  },
+  "status": {
+    "empty": "Enter all required values to calculate.",
+    "incomplete": "Complete or correct the highlighted fields to enable calculation.",
+    "ready": "All required fields are valid. The result is updating live."
+  },
+  "details": {
+    "how": {
+      "title": "How it works",
+      "description": "FIB-4 combines age and liver enzymes with platelet count to estimate fibrosis burden non-invasively.",
+      "formula": "FIB-4 = (age [years] × AST [U/L]) / (platelets [×10^9/L] × √ALT [U/L])",
+      "variables": {
+        "age": {
+          "label": "Age",
+          "value": "Age in years."
+        },
+        "ast": {
+          "label": "AST",
+          "value": "Aspartate aminotransferase in U/L."
+        },
+        "alt": {
+          "label": "ALT",
+          "value": "Alanine aminotransferase in U/L; must be > 0."
+        },
+        "platelets": {
+          "label": "Platelets",
+          "value": "Platelet count in ×10^9/L."
+        }
+      }
+    },
+    "notes": {
+      "title": "Clinical notes",
+      "items": {
+        "context": "Cutoffs were derived in specific populations; accuracy varies by etiology and setting.",
+        "cutoffs": "This tool uses 1.45 and 3.25 as commonly cited boundaries; age-adjusted cutoffs may apply in some guidelines.",
+        "diagnosis": "FIB-4 is not a standalone diagnosis."
+      }
+    }
+  },
+  "references": {
+    "section": {
+      "title": "References",
+      "description": "Primary derivation and secondary calculator references."
+    },
+    "items": {
+      "sterling": "Sterling RK, Lissen E, Clumeck N, et al. Development of a simple noninvasive index to predict significant fibrosis in patients with HIV/HCV coinfection. Hepatology. 2006;43(6):1317-1325.",
+      "mdcalc": "MDCalc. FIB-4 Fibrosis Index. Logic reviewed for formula parity during implementation."
+    }
+  },
+  "common": {
+    "emptyValue": "--"
+  },
+  "footer": {
+    "disclaimer": "For clinical decision support only. Not a diagnosis. Use alongside professional judgment."
+  }
+}
