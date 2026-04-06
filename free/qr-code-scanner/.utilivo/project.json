@@ -1,6 +1,0 @@
-{
-  "project_type": "utilivo-plugin",
-  "slug": "qr-code-scanner",
-  "sdk": "utilivo-sdk",
-  "schema_version": 1
-}

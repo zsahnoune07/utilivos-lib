@@ -21,7 +21,7 @@ const SESSION_SNAPSHOT_VERSION = 1;
 const ML_PER_8OZ = 236.5882365;
 const ML_PER_GLASS = 250;
 
-const ui = window.UtilivoUI;
+const ui = window.UtilivosUI;
 const dom = {
   inputs: {},
   shells: {},
@@ -409,9 +409,9 @@ async function bootstrap() {
   cacheDom();
   storageAdapter = createStorageAdapter(window);
 
-  const runtime = window.UtilivoRuntime;
+  const runtime = window.UtilivosRuntime;
   if (runtime && typeof runtime.syncState === "function") {
-    session = window.UtilivoRuntime.syncState({
+    session = window.UtilivosRuntime.syncState({
       read: getSessionSnapshot,
       write: applySessionSnapshot,
       debounceMs: 400
@@ -426,7 +426,7 @@ async function bootstrap() {
 
   bindEvents();
 
-  if (session && window.UtilivoRuntime?.shouldHydrateFromHost?.()) {
+  if (session && window.UtilivosRuntime?.shouldHydrateFromHost?.()) {
     await session.hydrateFromHost();
   } else {
     await restoreState();

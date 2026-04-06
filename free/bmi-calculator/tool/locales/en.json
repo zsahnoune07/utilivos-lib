@@ -167,7 +167,7 @@
       "points": {
         "metric": "Metric and imperial entries resolve to the same metric calculation model.",
         "range": "Healthy-weight range uses BMI 18.5 to 24.9 for the entered height.",
-        "local": "Measurements stay inside the local Utilivo runtime with no network calls."
+        "local": "Measurements stay inside the local Utilivos runtime with no network calls."
       }
     },
     "thresholds": {

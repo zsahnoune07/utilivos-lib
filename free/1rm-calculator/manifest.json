@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.1rm-calculator",
+  "id": "com.utilivos.plugin.1rm-calculator",
   "name": "1RM calculator",
   "slug": "1rm-calculator",
   "version": "1.0.1",
   "description": "Estimate one-rep max from a submax set using Brzycki, Epley, and Lombardi formulas, with kg/lb units and session restore.",
-  "author": "Utilivo",
+  "author": "Utilivos",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

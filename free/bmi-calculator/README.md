@@ -1,6 +1,6 @@
 # BMI Calculator
 
-Offline Utilivo adult wellness calculator for estimating body mass index with metric or imperial inputs. The tool keeps calculation, interpretation, and state restore inside the local WebView bundle.
+Offline Utilivos adult wellness calculator for estimating body mass index with metric or imperial inputs. The tool keeps calculation, interpretation, and state restore inside the local WebView bundle.
 
 ## What it does
 
@@ -15,7 +15,7 @@ Offline Utilivo adult wellness calculator for estimating body mass index with me
 - Live validation and live recalculation once the active fields are valid
 - Localized English copy in `tool/locales/en.json`
 - Pure calculator and storage modules with Node-based tests under `tests/`
-- Deterministic `.ubb` packaging through the Utilivo CLI
+- Deterministic `.ubb` packaging through the Utilivos CLI
 
 ## Project structure
 
@@ -35,7 +35,7 @@ bmi-calculator/
 │   │   └── storage.js
 │   ├── locales/
 │   │   └── en.json
-│   ├── utilivo/
+│   ├── utilivos/
 │   │   ├── base.css
 │   │   ├── components.css
 │   │   ├── layout.css
@@ -48,23 +48,23 @@ bmi-calculator/
 ## Development
 
 ```bash
-utilivo verify
-utilivo test
-utilivo build
+utilivos verify
+utilivos test
+utilivos build
 ```
 
-`utilivo test` runs the built-in manifest and structure checks plus `npm test`, which executes the Node test suite in `tests/*.test.mjs`.
+`utilivos test` runs the built-in manifest and structure checks plus `npm test`, which executes the Node test suite in `tests/*.test.mjs`.
 
 ## Build and package
 
-`utilivo build` produces the signed bundle flow expected by the marketplace:
+`utilivos build` produces the signed bundle flow expected by the marketplace:
 
 - `dist/bmi-calculator-1.0.0.ubb`
 - `dist/bmi-calculator-1.0.0.sig`
 - `dist/bmi-calculator-1.0.0.sha256`
 - `dist/bmi-calculator-1.0.0.manifest.json`
 
-Ship the generated `.ubb` artifact through the Utilivo host app pipeline or local bundle seeding workflow.
+Ship the generated `.ubb` artifact through the Utilivos host app pipeline or local bundle seeding workflow.
 
 ## Wellness positioning
 
@@ -75,5 +75,5 @@ Ship the generated `.ubb` artifact through the Utilivo host app pipeline or loca
 ## Assumptions
 
 - The tool runs fully offline with no network calls or analytics.
-- The Utilivo runtime may expose a storage bridge; when it is absent, the tool falls back safely to in-WebView local storage.
+- The Utilivos runtime may expose a storage bridge; when it is absent, the tool falls back safely to in-WebView local storage.
 - Existing icon, thumb, and screenshot assets are retained as placeholders until product art is supplied.

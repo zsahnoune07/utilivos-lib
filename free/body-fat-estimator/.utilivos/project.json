@@ -1,0 +1,6 @@
+{
+  "project_type": "utilivos-plugin",
+  "slug": "body-fat-estimator",
+  "sdk": "utilivos-sdk",
+  "schema_version": 1
+}

@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.pace-converter",
+  "id": "com.utilivos.plugin.pace-converter",
   "name": "Pace Converter",
   "slug": "pace-converter",
   "version": "1.0.0",
   "description": "Convert running pace and speed (mph, km/h, m/s), min/mile and min/km, plus 5k, 10k, half marathon, and marathon finish times.",
-  "author": "Utilivo Developer",
+  "author": "Utilivos Developer",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

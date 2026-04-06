@@ -1,12 +1,12 @@
 # BTC Generator
 
-Browser-based Bitcoin address generator plugin for the Utilivo host app. It derives Bitcoin address outputs from raw private keys locally and exposes the intermediate steps for inspection.
+Browser-based Bitcoin address generator plugin for the Utilivos host app. It derives Bitcoin address outputs from raw private keys locally and exposes the intermediate steps for inspection.
 
 ## What it does
 
 - Builds legacy P2PKH addresses from a 32-byte private key with a full step-by-step derivation trace.
 - Derives related outputs from the same key: WIF, nested SegWit (P2SH-P2WPKH), native SegWit (bech32), and script templates.
-- Preserves in-progress builder sessions through `UtilivoRuntime.syncState` while keeping long-lived storage limited to non-sensitive preferences.
+- Preserves in-progress builder sessions through `UtilivosRuntime.syncState` while keeping long-lived storage limited to non-sensitive preferences.
 
 ## Main features
 
@@ -26,9 +26,9 @@ Browser-based Bitcoin address generator plugin for the Utilivo host app. It deri
 ## Development
 
 ```bash
-utilivo verify
-utilivo test
-utilivo build
+utilivos verify
+utilivos test
+utilivos build
 ```
 
-Runtime sources live under `tool/`. Shared host styles stay in `tool/utilivo/`, plugin-specific styling stays in `tool/style.css`, and tests live under `tests/`.
+Runtime sources live under `tool/`. Shared host styles stay in `tool/utilivos/`, plugin-specific styling stays in `tool/style.css`, and tests live under `tests/`.

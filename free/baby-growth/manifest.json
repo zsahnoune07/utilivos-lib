@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.baby-growth",
+  "id": "com.utilivos.plugin.baby-growth",
   "name": "Baby growth percentiles",
   "slug": "baby-growth",
   "version": "1.0.0",
   "description": "WHO Child Growth Standards (0-24 months): weight-for-age, length-for-age, and optional head circumference percentiles. Educational only—not a substitute for your clinician.",
-  "author": "Utilivo Developer",
+  "author": "Utilivos Developer",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

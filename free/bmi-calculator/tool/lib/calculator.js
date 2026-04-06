@@ -1,4 +1,4 @@
-export const STORAGE_KEY = "utilivo.bmi-calculator.v1";
+export const STORAGE_KEY = "utilivos.bmi-calculator.v1";
 
 const KG_PER_LB = 0.45359237;
 const CM_PER_INCH = 2.54;

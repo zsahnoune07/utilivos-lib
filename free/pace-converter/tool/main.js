@@ -8,7 +8,7 @@ import {
 
 const SESSION_SNAPSHOT_VERSION = 2;
 
-const ui = window.UtilivoUI;
+const ui = window.UtilivosUI;
 
 let session = null;
 let updating = false;
@@ -377,15 +377,15 @@ async function bootstrap() {
     return;
   }
 
-  const runtime = window.UtilivoRuntime;
-  if (runtime && typeof window.UtilivoRuntime.syncState === "function") {
-    session = window.UtilivoRuntime.syncState({
+  const runtime = window.UtilivosRuntime;
+  if (runtime && typeof window.UtilivosRuntime.syncState === "function") {
+    session = window.UtilivosRuntime.syncState({
       read: getSessionSnapshot,
       write: applySessionSnapshot,
       debounceMs: 400,
     });
-    if (typeof window.UtilivoRuntime.registerSessionRestore === "function") {
-      window.UtilivoRuntime.registerSessionRestore((snapshot) => {
+    if (typeof window.UtilivosRuntime.registerSessionRestore === "function") {
+      window.UtilivosRuntime.registerSessionRestore((snapshot) => {
         applySessionSnapshot(snapshot);
         session.persistNow();
       });

@@ -1,4 +1,4 @@
-export const STORAGE_KEY = "utilivo.body-fat-estimator.v1";
+export const STORAGE_KEY = "utilivos.body-fat-estimator.v1";
 
 const CM_PER_INCH = 2.54;
 const MIN_HEIGHT_CM = 100;

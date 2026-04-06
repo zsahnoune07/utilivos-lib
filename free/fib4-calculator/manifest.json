@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.fib4-calculator",
+  "id": "com.utilivos.plugin.fib4-calculator",
   "name": "FIB-4 Index",
   "slug": "fib4-calculator",
   "version": "1.0.0",
   "description": "FIB-4 liver fibrosis index with four inputs, validation, live results, and optional storage persistence.",
-  "author": "Utilivo Developer",
+  "author": "Utilivos Developer",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

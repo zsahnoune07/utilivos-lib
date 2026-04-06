@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.qr-code-scanner",
+  "id": "com.utilivos.plugin.qr-code-scanner",
   "name": "QR Code Scanner",
   "slug": "qr-code-scanner",
   "version": "1.0.1",
   "description": "Scan QR codes with your camera or decode them from a photo in your library.",
-  "author": "Utilivo Developer",
+  "author": "Utilivos Developer",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",
@@ -15,7 +15,7 @@
     "barcode",
     "camera",
     "offline",
-    "utilivo"
+    "utilivos"
   ],
   "tier": "free",
   "permissions": [

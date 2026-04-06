@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.water-intake-calculator",
+  "id": "com.utilivos.plugin.water-intake-calculator",
   "name": "Water Intake Calculator",
   "slug": "water-intake-calculator",
   "version": "1.0.0",
   "description": "Estimate daily fluid intake from body weight, activity, climate, and optional pregnancy or breastfeeding add-ons. Educational only—not medical advice.",
-  "author": "Utilivo",
+  "author": "Utilivos",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

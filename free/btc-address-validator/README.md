@@ -1,12 +1,12 @@
 # BTC Address Validator
 
-Browser-based Bitcoin address validation plugin for the Utilivo host app. It validates Bitcoin addresses and WIF keys locally and exposes their decoded network, payload, checksum, and script details.
+Browser-based Bitcoin address validation plugin for the Utilivos host app. It validates Bitcoin addresses and WIF keys locally and exposes their decoded network, payload, checksum, and script details.
 
 ## What it does
 
 - Validates Base58Check addresses, WIF keys, and Bech32/Bech32m SegWit addresses.
 - Reports network, encoding, payload, checksum state, and inferred scriptPubKey.
-- Preserves the in-progress validation session through `UtilivoRuntime.syncState` and stores the last input locally through the declared `storage` permission.
+- Preserves the in-progress validation session through `UtilivosRuntime.syncState` and stores the last input locally through the declared `storage` permission.
 
 ## Main features
 
@@ -24,9 +24,9 @@ Browser-based Bitcoin address validation plugin for the Utilivo host app. It val
 ## Development
 
 ```bash
-utilivo verify
-utilivo test
-utilivo build
+utilivos verify
+utilivos test
+utilivos build
 ```
 
-Runtime sources live under `tool/`. Shared host styles stay in `tool/utilivo/`, plugin-specific styling stays in `tool/style.css`, and tests live under `tests/`.
+Runtime sources live under `tool/`. Shared host styles stay in `tool/utilivos/`, plugin-specific styling stays in `tool/style.css`, and tests live under `tests/`.

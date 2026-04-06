@@ -1,4 +1,4 @@
-export const STORAGE_KEY = "utilivo.nafld-fibrosis-score.v1";
+export const STORAGE_KEY = "utilivos.nafld-fibrosis-score.v1";
 
 const NUMERIC_FIELD_CONFIG = {
   age: { min: 18, max: 120, integer: true, errorBase: "form.fields.age.errors" },

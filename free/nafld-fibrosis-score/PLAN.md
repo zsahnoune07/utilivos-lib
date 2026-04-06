@@ -2,7 +2,7 @@
 
 ## Phase 1: Scaffold baseline
 - Confirm manifest metadata, tags, and permissions for nafld-fibrosis-score.
-- Acceptance criteria: utilivo verify passes.
+- Acceptance criteria: utilivos verify passes.
 
 ## Phase 2: Core workflow
 - NFS inputs, validation, live result, and storage persistence in tool/.
@@ -11,4 +11,4 @@
 ## Phase 3: Quality and release
 - Add or refine tests under tests/.
 - Build and inspect signed .ubb outputs.
-- Acceptance criteria: utilivo test and utilivo build both pass.
+- Acceptance criteria: utilivos test and utilivos build both pass.

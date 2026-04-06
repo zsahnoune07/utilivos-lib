@@ -15,7 +15,7 @@ import {
   writePersistedState
 } from "./lib/storage.js";
 
-const ui = window.UtilivoUI;
+const ui = window.UtilivosUI;
 const dom = {
   inputs: {},
   shells: {},

@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.body-fat-estimator",
+  "id": "com.utilivos.plugin.body-fat-estimator",
   "name": "Body Fat Estimator",
   "slug": "body-fat-estimator",
   "version": "1.0.0",
   "description": "Estimate body fat percentage from neck, height, and waist or abdomen measurements using the U.S. Navy tape method. Metric or imperial input, optional storage. Educational only—not medical advice.",
-  "author": "Utilivo",
+  "author": "Utilivos",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

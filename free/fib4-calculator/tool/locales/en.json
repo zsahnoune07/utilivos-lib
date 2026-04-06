@@ -8,7 +8,7 @@
   },
   "overview": {
     "title": "What this tool does",
-    "description": "Computes the Fibrosis-4 (FIB-4) index for clinical reference inside the Utilivo WebView runtime.",
+    "description": "Computes the Fibrosis-4 (FIB-4) index for clinical reference inside the Utilivos WebView runtime.",
     "points": {
       "formula": "Uses the standard FIB-4 equation with age, AST, ALT, and platelets.",
       "risk": "Classifies into low, indeterminate, or high probability bands using common published cutoffs (1.45 and 3.25).",

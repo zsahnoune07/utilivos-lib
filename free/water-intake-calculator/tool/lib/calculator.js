@@ -1,4 +1,4 @@
-export const STORAGE_KEY = "utilivo.water-intake-calculator.v1";
+export const STORAGE_KEY = "utilivos.water-intake-calculator.v1";
 
 const KG_PER_LB = 0.45359237;
 

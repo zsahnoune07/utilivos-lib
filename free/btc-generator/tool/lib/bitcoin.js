@@ -1,4 +1,4 @@
-export const STORAGE_KEY = "utilivo.btc-generator.v1";
+export const STORAGE_KEY = "utilivos.btc-generator.v1";
 export const STORAGE_SNAPSHOT_VERSION = 1;
 export const SESSION_SNAPSHOT_VERSION = 1;
 

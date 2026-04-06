@@ -1,4 +1,4 @@
-export const STORAGE_KEY = "utilivo.heart-rate-zones.v1";
+export const STORAGE_KEY = "utilivos.heart-rate-zones.v1";
 
 const MIN_AGE = 15;
 const MAX_AGE = 100;

@@ -1,13 +1,13 @@
 # Heart Rate Zones
 
-Utilivo plugin that estimates five training heart rate zones from **age** and **resting heart rate** using the **Karvonen method** (heart rate reserve) and the common **max HR = 220 − age** estimate.
+Utilivos plugin that estimates five training heart rate zones from **age** and **resting heart rate** using the **Karvonen method** (heart rate reserve) and the common **max HR = 220 − age** estimate.
 
 ## Quick start
 
 ```bash
 npm test
-utilivo verify
-utilivo test
+utilivos verify
+utilivos test
 ```
 
 ## Plugin details
@@ -18,5 +18,5 @@ utilivo test
 
 ## For maintainers
 
-- Run `utilivo build` when ready to produce signed `.ubb` artifacts (not required for day-to-day development).
+- Run `utilivos build` when ready to produce signed `.ubb` artifacts (not required for day-to-day development).
 - See [AGENTS.md](AGENTS.md) for UI and localization rules.

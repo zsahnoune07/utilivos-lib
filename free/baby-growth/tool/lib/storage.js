@@ -1,9 +1,9 @@
 function resolveStorageBridge(host) {
   const candidates = [
-    host?.UtilivoBridge?.storage,
-    host?.utilivoBridge?.storage,
-    host?.__UTILIVO_BRIDGE__?.storage,
-    host?.Utilivo?.storage
+    host?.UtilivosBridge?.storage,
+    host?.utilivosBridge?.storage,
+    host?.__UTILIVOS_BRIDGE__?.storage,
+    host?.Utilivos?.storage
   ];
 
   return candidates.find((candidate) => candidate && typeof candidate === "object") ?? null;

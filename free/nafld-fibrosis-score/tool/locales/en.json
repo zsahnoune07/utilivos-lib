@@ -9,7 +9,7 @@
   },
   "overview": {
     "title": "What this tool does",
-    "description": "This calculator reproduces the standard NAFLD Fibrosis Score workflow for clinical reference inside the Utilivo WebView runtime.",
+    "description": "This calculator reproduces the standard NAFLD Fibrosis Score workflow for clinical reference inside the Utilivos WebView runtime.",
     "badges": {
       "label": "Tool highlights",
       "offline": "Works fully offline",

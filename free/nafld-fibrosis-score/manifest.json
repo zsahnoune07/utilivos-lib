@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.nafld-fibrosis-score",
+  "id": "com.utilivos.plugin.nafld-fibrosis-score",
   "name": "NAFLD Fibrosis Score",
   "slug": "nafld-fibrosis-score",
   "version": "1.0.0",
   "description": "NAFLD Fibrosis Score calculator with local validation, live results, and optional storage persistence.",
-  "author": "Utilivo Developer",
+  "author": "Utilivos Developer",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

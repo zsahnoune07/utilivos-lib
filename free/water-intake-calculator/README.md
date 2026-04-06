@@ -1,12 +1,12 @@
 # Water Intake Calculator
 
-Utilivo plugin that estimates a daily **fluid** target from weight (metric or imperial), optional sex-based ml/kg baseline, activity add-ons, climate, and pregnancy or breastfeeding adjustments.
+Utilivos plugin that estimates a daily **fluid** target from weight (metric or imperial), optional sex-based ml/kg baseline, activity add-ons, climate, and pregnancy or breastfeeding adjustments.
 
 ## What this plugin does
 
 - Computes a transparent breakdown (base from weight, plus activity, hot climate, and pregnancy or lactation where selected).
-- Persists form state via the host bridge (`storage` permission) and `UtilivoRuntime.syncState` when available.
-- Ships English copy under `tool/locales/en.json` and follows utilivo-ui primitives only.
+- Persists form state via the host bridge (`storage` permission) and `UtilivosRuntime.syncState` when available.
+- Ships English copy under `tool/locales/en.json` and follows utilivos-ui primitives only.
 
 ## Main features
 
@@ -18,17 +18,17 @@ Utilivo plugin that estimates a daily **fluid** target from weight (metric or im
 ## Quick start
 
 ```bash
-utilivo run
-utilivo verify
-utilivo test
+utilivos run
+utilivos verify
+utilivos test
 npm test
-utilivo build
+utilivos build
 ```
 
 ## For AI and automated agents
 
-- Run utilivo verify and utilivo test when useful to validate changes.
-- Do not run utilivo build after implementing unless the user explicitly asks; the maintainer builds and reviews release artifacts.
+- Run utilivos verify and utilivos test when useful to validate changes.
+- Do not run utilivos build after implementing unless the user explicitly asks; the maintainer builds and reviews release artifacts.
 
 ## Plugin details
 
@@ -44,18 +44,18 @@ See .env.example. Add project-specific values only when the plugin needs runtime
 
 ## Build and deploy
 
-- Build a signed package with utilivo build.
+- Build a signed package with utilivos build.
 - Ship the generated dist/<slug>-<version>.ubb artifact to the host app pipeline.
 - Use build.ignore for source-only files that should stay out of the final .ubb payload.
 
 ## Assumptions
 
-- Plugin runs in the Utilivo host bridge sandbox.
+- Plugin runs in the Utilivos host bridge sandbox.
 - Distribution target is a signed .ubb bundle.
 
 ## Development
 
 Edit source files in tool/ and update manifest.json carefully.
-Always consume design tokens from tool/utilivo/base.css and shared components from tool/utilivo/components.css.
-Run utilivo run for a browser-based dev shell with live refresh and runtime metadata injection.
+Always consume design tokens from tool/utilivos/base.css and shared components from tool/utilivos/components.css.
+Run utilivos run for a browser-based dev shell with live refresh and runtime metadata injection.
 Store every user-facing string in tool/locales/*.json, even when the plugin only ships English.

@@ -16,7 +16,7 @@ import {
 
 const SESSION_SNAPSHOT_VERSION = 1;
 
-const ui = window.UtilivoUI;
+const ui = window.UtilivosUI;
 const dom = {
   steps: {}
 };
@@ -351,9 +351,9 @@ async function bootstrap() {
   cacheDom();
   storageAdapter = createStorageAdapter(window);
 
-  const runtime = window.UtilivoRuntime;
+  const runtime = window.UtilivosRuntime;
   if (runtime && typeof runtime.syncState === "function") {
-    session = window.UtilivoRuntime.syncState({
+    session = window.UtilivosRuntime.syncState({
       read: getSessionSnapshot,
       write: applySessionSnapshot,
       debounceMs: 400
@@ -369,7 +369,7 @@ async function bootstrap() {
 
   bindEvents();
 
-  if (session && window.UtilivoRuntime?.shouldHydrateFromHost?.()) {
+  if (session && window.UtilivosRuntime?.shouldHydrateFromHost?.()) {
     await session.hydrateFromHost();
   } else {
     await restoreState();

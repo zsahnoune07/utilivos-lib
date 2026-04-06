@@ -22,7 +22,7 @@ import {
 
 const SESSION_SNAPSHOT_VERSION = 3;
 
-const ui = window.UtilivoUI;
+const ui = window.UtilivosUI;
 
 const INPUT_IDS = [
   "birthDate",
@@ -674,9 +674,9 @@ async function bootstrap() {
   cacheDom();
   storageAdapter = createStorageAdapter(window);
 
-  const runtime = window.UtilivoRuntime;
-  if (runtime && typeof window.UtilivoRuntime.syncState === "function") {
-    session = window.UtilivoRuntime.syncState({
+  const runtime = window.UtilivosRuntime;
+  if (runtime && typeof window.UtilivosRuntime.syncState === "function") {
+    session = window.UtilivosRuntime.syncState({
       read: getSessionSnapshot,
       write: applySessionSnapshot,
       debounceMs: 400

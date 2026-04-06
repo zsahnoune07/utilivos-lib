@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.bmi-calculator",
+  "id": "com.utilivos.plugin.bmi-calculator",
   "name": "BMI Calculator",
   "slug": "bmi-calculator",
   "version": "1.0.4",
   "description": "Offline adult BMI calculator with metric and imperial input, and healthy-weight range guidance.",
-  "author": "Utilivo",
+  "author": "Utilivos",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

@@ -7,4 +7,4 @@
 - FIB-4 formula, validation, live result, storage in tool/.
 
 ## Phase 3: Quality
-- Node tests under tests/; utilivo verify/build as needed.
+- Node tests under tests/; utilivos verify/build as needed.

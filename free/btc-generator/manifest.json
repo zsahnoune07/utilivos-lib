@@ -1,10 +1,10 @@
 {
-  "id": "com.utilivo.plugin.btc-generator",
+  "id": "com.utilivos.plugin.btc-generator",
   "name": "BTC Generator",
   "slug": "btc-generator",
   "version": "1.0.0",
   "description": "Generate Bitcoin addresses locally from private keys with derivation and script diagnostics.",
-  "author": "Utilivo",
+  "author": "Utilivos",
   "entry": "tool/index.html",
   "icon": "tool/assets/icon.png",
   "thumb": "tool/assets/thumb.png",

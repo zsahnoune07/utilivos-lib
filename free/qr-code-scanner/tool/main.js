@@ -1,5 +1,5 @@
 (() => {
-  const ui = window.UtilivoUI;
+  const ui = window.UtilivosUI;
   const video = document.getElementById("video");
   const canvas = document.getElementById("canvas");
   const placeholder = document.getElementById("preview-placeholder");
@@ -14,7 +14,7 @@
 
   if (
     !ui ||
-    !window.UtilivoRuntime ||
+    !window.UtilivosRuntime ||
     !video ||
     !canvas ||
     !placeholder ||
@@ -35,7 +35,7 @@
 
   function debugLog() {
     try {
-      if (window.UtilivoHost?.capabilities?.debugToolRuntime === true) {
+      if (window.UtilivosHost?.capabilities?.debugToolRuntime === true) {
         const args = Array.prototype.slice.call(arguments);
         args.unshift("[qr-code-scanner]");
         console.log.apply(console, args);
@@ -50,7 +50,7 @@
   const maxLiveSide = 720;
   const maxFileSide = 1200;
 
-  /** @type {ReturnType<typeof window.UtilivoRuntime.syncState> | null} */
+  /** @type {ReturnType<typeof window.UtilivosRuntime.syncState> | null} */
   let session = null;
 
   function emptyLabel() {
@@ -314,7 +314,7 @@
       }
     }
 
-    session = window.UtilivoRuntime.syncState({
+    session = window.UtilivosRuntime.syncState({
       read: getSerializableState,
       write: applySerializableState,
       debounceMs: 400,
@@ -330,7 +330,7 @@
     });
 
     pickBtn.addEventListener("click", async () => {
-      const record = window.utilivo?.recordStorageAction;
+      const record = window.utilivos?.recordStorageAction;
       if (typeof record !== "function") {
         scanStatus.textContent = ui.t("errors.noImagePicker");
         scanStatus.hidden = false;

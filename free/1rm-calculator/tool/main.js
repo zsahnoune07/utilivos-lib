@@ -9,14 +9,14 @@ import {
 
 const SESSION_SNAPSHOT_VERSION = 1;
 
-const ui = window.UtilivoUI;
+const ui = window.UtilivosUI;
 
 let formStateFull = createEmptyFormState();
 
 /** @type {Record<string, boolean>} */
 let touched = { weight: false, reps: false };
 
-/** @type {ReturnType<NonNullable<typeof window.UtilivoRuntime>["syncState"]> | null} */
+/** @type {ReturnType<NonNullable<typeof window.UtilivosRuntime>["syncState"]> | null} */
 let session = null;
 
 let persistTimer = 0;
@@ -451,14 +451,14 @@ async function bootstrap() {
   touched = { weight: false, reps: false };
   syncDomFromState();
 
-  if (window.UtilivoRuntime && typeof window.UtilivoRuntime.syncState === "function") {
-    session = window.UtilivoRuntime.syncState({
+  if (window.UtilivosRuntime && typeof window.UtilivosRuntime.syncState === "function") {
+    session = window.UtilivosRuntime.syncState({
       read: getSessionSnapshot,
       write: applySessionSnapshot,
       debounceMs: 400,
     });
-    if (typeof window.UtilivoRuntime.registerSessionRestore === "function") {
-      window.UtilivoRuntime.registerSessionRestore((snapshot) => {
+    if (typeof window.UtilivosRuntime.registerSessionRestore === "function") {
+      window.UtilivosRuntime.registerSessionRestore((snapshot) => {
         applySessionSnapshot(snapshot);
         session?.persistNow();
       });
@@ -467,7 +467,7 @@ async function bootstrap() {
 
   bindEvents();
 
-  if (session && window.UtilivoRuntime?.shouldHydrateFromHost?.()) {
+  if (session && window.UtilivosRuntime?.shouldHydrateFromHost?.()) {
     await session.hydrateFromHost();
   }
 

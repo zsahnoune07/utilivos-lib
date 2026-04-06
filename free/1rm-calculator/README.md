@@ -1,6 +1,6 @@
 # 1RM calculator
 
-Utilivo plugin that estimates **one-rep max (1RM)** from a submax set using three common formulas, with **kg / lb** input and host session restore.
+Utilivos plugin that estimates **one-rep max (1RM)** from a submax set using three common formulas, with **kg / lb** input and host session restore.
 
 ## Formulas
 
@@ -15,13 +15,13 @@ Reps are limited to **1–15** so estimates stay in a typical submax range and a
 ## Quick start
 
 ```bash
-cd utilivo-lib/free/1rm-calculator
-utilivo verify
-utilivo test
+cd utilivos-lib/free/1rm-calculator
+utilivos verify
+utilivos test
 npm test
 ```
 
-Maintainers run `utilivo build` after review to produce signed `.ubb` artifacts.
+Maintainers run `utilivos build` after review to produce signed `.ubb` artifacts.
 
 ## Plugin details
 
