@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-i18n-document-title="page.meta.title">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title></title>
+    <link rel="stylesheet" href="./utilivos/base.css" />
+    <link rel="stylesheet" href="./utilivos/layout.css" />
+    <link rel="stylesheet" href="./utilivos/components.css" />
+    <link rel="stylesheet" href="./utilivos/patterns.css" />
+    <link rel="stylesheet" href="./utilivos/utilities.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="uv-tool-page">
+    <main class="uv-tool-page__content pomodoro-page">
+      <section class="uv-card uv-section" aria-labelledby="timer-heading">
+        <h2 id="timer-heading" class="uv-section__title" data-i18n="timer.section.title"></h2>
+        <p class="uv-section__description" data-i18n="timer.section.description"></p>
+
+        <div class="pomodoro-timer" role="status" aria-live="polite">
+          <p id="phaseLabel" class="pomodoro-phase"></p>
+          <p id="clock" class="pomodoro-clock">25:00</p>
+          <p id="phaseMeta" class="pomodoro-meta"></p>
+        </div>
+
+        <div class="pomodoro-progress">
+          <div class="pomodoro-progress__track">
+            <div id="progressBar" class="pomodoro-progress__value"></div>
+          </div>
+          <p id="progressText" class="uv-text-body-sm uv-text-muted"></p>
+        </div>
+
+        <div class="uv-cluster pomodoro-actions">
+          <button id="startPauseButton" class="uv-button" type="button"></button>
+          <button id="skipButton" class="uv-button uv-button--secondary" type="button" data-i18n="timer.actions.skip"></button>
+          <button id="resetButton" class="uv-button uv-button--secondary" type="button" data-i18n="timer.actions.reset"></button>
+        </div>
+
+        <div id="statusAlert" class="uv-alert uv-alert--info" role="status" aria-live="polite">
+          <p id="statusText"></p>
+        </div>
+      </section>
+
+      <section class="uv-card uv-section" aria-labelledby="settings-heading">
+        <h2 id="settings-heading" class="uv-section__title" data-i18n="settings.section.title"></h2>
+        <p class="uv-section__description" data-i18n="settings.section.description"></p>
+
+        <div class="pomodoro-grid">
+          <label class="uv-field" for="workMinutes">
+            <span class="uv-field__label" data-i18n="settings.fields.work.label"></span>
+            <input id="workMinutes" class="uv-input" type="number" min="1" max="120" step="1" />
+          </label>
+          <label class="uv-field" for="shortBreakMinutes">
+            <span class="uv-field__label" data-i18n="settings.fields.short_break.label"></span>
+            <input id="shortBreakMinutes" class="uv-input" type="number" min="1" max="60" step="1" />
+          </label>
+          <label class="uv-field" for="longBreakMinutes">
+            <span class="uv-field__label" data-i18n="settings.fields.long_break.label"></span>
+            <input id="longBreakMinutes" class="uv-input" type="number" min="1" max="90" step="1" />
+          </label>
+          <label class="uv-field" for="sessionsPerLongBreak">
+            <span class="uv-field__label" data-i18n="settings.fields.cycle.label"></span>
+            <input id="sessionsPerLongBreak" class="uv-input" type="number" min="2" max="12" step="1" />
+          </label>
+        </div>
+
+        <div class="pomodoro-toggles">
+          <label class="uv-switch">
+            <input id="autoStartNextPhase" type="checkbox" />
+            <span class="uv-switch__track"><span class="uv-switch__thumb"></span></span>
+            <span data-i18n="settings.toggles.auto_start"></span>
+          </label>
+          <label class="uv-switch">
+            <input id="notificationsEnabled" type="checkbox" />
+            <span class="uv-switch__track"><span class="uv-switch__thumb"></span></span>
+            <span data-i18n="settings.toggles.notifications"></span>
+          </label>
+          <label class="uv-switch">
+            <input id="soundEnabled" type="checkbox" />
+            <span class="uv-switch__track"><span class="uv-switch__thumb"></span></span>
+            <span data-i18n="settings.toggles.sound"></span>
+          </label>
+        </div>
+      </section>
+
+    </main>
+    <script src="./utilivos/tool.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

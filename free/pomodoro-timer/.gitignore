@@ -1,0 +1,6 @@
+dist/*.ubb
+dist/*.utilivos.zip
+dist/*.sig
+dist/*.sha256
+dist/*.manifest.json
+.utilivos/tmp/

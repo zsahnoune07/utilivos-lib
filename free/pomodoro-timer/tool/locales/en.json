@@ -1,0 +1,73 @@
+{
+  "page": {
+    "meta": {
+      "title": "Pomodoro Timer"
+    }
+  },
+  "timer": {
+    "section": {
+      "title": "Focus timer",
+      "description": "Run customizable work and break intervals with automatic phase transitions."
+    },
+    "phases": {
+      "work": "Work session",
+      "short_break": "Short break",
+      "long_break": "Long break"
+    },
+    "phase_meta": "Completed sessions: {{sessions}} / {{cycle}} before long break",
+    "progress": "{{elapsed}} elapsed of {{total}}",
+    "actions": {
+      "start": "Start",
+      "pause": "Pause",
+      "resume": "Resume",
+      "skip": "Skip phase",
+      "reset": "Reset timer"
+    },
+    "status": {
+      "ready": "Ready to focus.",
+      "running": "Timer is running.",
+      "paused": "Timer paused.",
+      "reset": "Timer reset to a fresh work session.",
+      "settings_saved": "Settings updated.",
+      "phase_completed": "{{phase}} completed.",
+      "phase_started": "{{phase}} started.",
+      "phase_skipped": "{{phase}} skipped.",
+      "notifications_denied": "Notifications are blocked. Enable notification permission to continue."
+    }
+  },
+  "settings": {
+    "section": {
+      "title": "Session settings",
+      "description": "Adjust your cycle length and behavior preferences."
+    },
+    "fields": {
+      "work": {
+        "label": "Work duration (minutes)"
+      },
+      "short_break": {
+        "label": "Short break (minutes)"
+      },
+      "long_break": {
+        "label": "Long break (minutes)"
+      },
+      "cycle": {
+        "label": "Work sessions per long break"
+      }
+    },
+    "toggles": {
+      "auto_start": "Auto-start next phase",
+      "notifications": "Enable browser notifications",
+      "sound": "Play sound cue at transitions"
+    }
+  },
+  "notifications": {
+    "phase_completed": {
+      "title": "Phase completed",
+      "body": "{{phase}} has ended."
+    },
+    "phase_started": {
+      "title": "New phase started",
+      "body": "{{phase}} is now active."
+    }
+  }
+}
